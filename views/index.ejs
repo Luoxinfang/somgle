@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%=title%></title>
+  <title><%= title %></title>
   <link rel='stylesheet' href='/css/bootstrap.css'/>
 </head>
 <body>
-<h1><%=title%></h1>
+<%=include inc/header %>
 
-<p>Welcome to <%=title%></p>
+<p>Welcome to <%= title %></p>
+
+<%=include inc/footer%>
+<script type="text/javascript">
+	seajs.use('page/index');
+</script>
 </body>
 </html>
