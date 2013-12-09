@@ -1,0 +1,111 @@
+.ts1{
+  -webkit-transition:all 0.2s ease;
+  -moz-transition:all 0.2s ease;
+  -o-transition:all 0.2s ease;
+  -ms-transition:all 0.2s ease;
+}
+.ts2{
+  -webkit-transition:all 0.5s ease;
+  -moz-transition:all 0.5s ease;
+  -o-transition:all 0.5s ease;
+  -ms-transition:all 0.5s ease;
+}
+.ts3{
+  -webkit-transition:all 0.8s ease;
+  -moz-transition:all 0.8s ease;
+  -o-transition:all 0.8s ease;
+  -ms-transition:all 0.8s ease;
+}
+.dl1{
+  -webkit-transition-delay: 0.2s;
+  -moz-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  -ms-transition-delay: 0.2s;
+}
+.dl2{
+  -webkit-transition-delay: 0.5s;
+  -moz-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  -ms-transition-delay: 0.5s;
+}
+.dl3{
+  -webkit-transition-delay: 0.8s;
+  -moz-transition-delay: 0.8s;
+  -o-transition-delay: 0.8s;
+  -ms-transition-delay: 0.8s;
+  transition-delay: 0.8s;
+}
+ul,li {
+  margin: 0;
+  padding: 0;
+}
+.menu {
+  height: 80px;
+  width: 80px;
+  display: inline-block;
+  cursor: pointer;
+}
+.menu-list {
+  overflow: hidden;
+  border-radius: 40px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  position: relative;
+  top: 21px;
+  left: 21px;
+  margin-top: -21px;
+  margin-left: -21px;
+  height: 80px;
+  width: 80px;
+}
+.menu .show {
+  -webkit-transform: rotate(45deg) scale(0.2)!important;
+}
+.menu .logo {
+  position: absolute;
+  top: 21px;
+  left: 21px;
+  height: 38px;
+  width: 38px;
+  line-height: 38px;
+  border-radius: 20px;
+  text-align: center;
+  background: #ffffff url("../../public/img/main/somgle_34.png") no-repeat;
+  border: solid 1px #007000;
+}
+.menu .logo:hover{
+  background: #ddee1a url("../../public/img/main/somgle_34.png") no-repeat;
+}
+.menu-list .item{
+  text-align: center;
+  display: inline-block;
+  background-color: #33ee33;
+  height: 40px;
+  width: 40px;
+}
+.menu-list .item:nth-child(3){
+  float: right;
+}
+.menu-list .item:hover,.menu-list .item.active{
+  background-color: #ddee1a;
+}
+.menu-list .item span{
+  display: block;
+  line-height: 40px;
+}
+.menu-list .item:nth-child(1) span{
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+}
+.menu-list .item:nth-child(2) span{
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+}
+.menu-list .item:nth-child(3) span{
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+}
+.menu-list .item:nth-child(4) span{
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+}
