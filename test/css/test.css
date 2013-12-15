@@ -35,6 +35,10 @@
   -ms-transition-delay: 0.8s;
   transition-delay: 0.8s;
 }
+body {
+  font-size: 12px;
+  font-family: arial, '宋体';
+}
 ul,li {
   margin: 0;
   padding: 0;
@@ -70,11 +74,13 @@ ul,li {
   line-height: 38px;
   border-radius: 20px;
   text-align: center;
-  background: #ffffff url("../../public/img/main/somgle_34.png") no-repeat;
+  background-color:  #bababa ;
+  background-image:url("../../public/img/main/somgle_34.png");
+  background-repeat: no-repeat;
   border: solid 1px #ddee1a;
 }
 .menu .logo:hover{
-  background: #ddee1a url("../../public/img/main/somgle_34.png") no-repeat;
+  background-color:  #bababa ;
 }
 .menu-list .item{
   text-align: center;

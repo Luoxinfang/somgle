@@ -3,13 +3,17 @@
 <head>
   <title>somgle--music makes the soul is no longer lonely</title>
   <link rel='stylesheet' href='/css/bootstrap.css'/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/index.css"/>
 </head>
 <body>
-<%=include inc/header.html %>
+<%= include inc/header.html %>
+<div id="main" class="main">
 
-<%=include inc/footer%>
+</div>
+<%= include inc/footer %>
 <script type="text/javascript">
-	seajs.use('page/index');
+  seajs.use(['page/com','page/index']);
 </script>
 </body>
 </html>

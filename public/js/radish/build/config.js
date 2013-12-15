@@ -4,6 +4,7 @@
 seajs.config({
   base:'/js',
   alias:{
+    'text':'radish/build/seajs-text',
     'jquery':'radish/lib/jquery-2.0.3',
     'jquery.cookie':'radish/lib/jquery.cookie',
     'lodash':'radish/lib/lodash',
@@ -13,6 +14,7 @@ seajs.config({
     'Form':'radish/core/form',
     'Date':'radish/core/date',
     'Key':'radish/core/key'
-  }
+  },
+  preload:['text']
 });
 
