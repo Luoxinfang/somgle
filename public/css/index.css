@@ -1,0 +1,83 @@
+.menu {
+  height: 80px;
+  width: 80px;
+  display: inline-block;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.menu-list {
+  overflow: hidden;
+  border-radius: 40px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  height: 80px;
+  width: 80px;
+}
+
+.menu .show {
+  -webkit-transform: scale(.5) !important;
+}
+
+.menu .logo {
+  position: relative;
+  top: -59px;
+  left: 21px;
+  height: 38px;
+  width: 38px;
+  line-height: 38px;
+  border-radius: 20px;
+  text-align: center;
+  background: rgba(225, 225, 225, 0.8) url("../img/main/somgle_34.png") no-repeat;
+  border: solid 1px #999999;
+}
+
+.menu .logo:hover {
+  background: rgba(153, 153, 153, 0.8) url("../img/main/somgle_34.png") no-repeat;
+}
+
+.menu-list .item {
+  text-align: center;
+  float: left;
+  background-color: #bababa;
+  height: 40px;
+  width: 40px;
+}
+
+.menu-list .item.active {
+  color: #ffffff;
+  background-color: rgba(100,100,100,0.8);
+}
+
+.menu-list .item:hover {
+  background-color: rgba(135,135,135,0.8);
+}
+
+.menu-list .item:nth-child(3) {
+  float: right;
+}
+
+.menu-list .item span {
+  display: block;
+  line-height: 40px;
+}
+
+.menu-list .item:nth-child(1) span {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+}
+
+.menu-list .item:nth-child(2) span {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+}
+
+.menu-list .item:nth-child(3) span {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+}
+
+.menu-list .item:nth-child(4) span {
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+}
