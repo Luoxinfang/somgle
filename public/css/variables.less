@@ -1,0 +1,57 @@
+/**
+ * by radish on 2013/12/29
+ * variables
+ */
+
+// Global
+//-------------------------
+@white:           #ffffff;
+@red:             #ff1314;
+@blue:            #5252ff;
+@black:           #333333;
+
+@bg-color:        #999999;
+@color-text:      lighten(@white,10%);
+@bg-color-hover:  @bg-color / 2;
+@bg-color-active: @bg-color / 3;
+@bg-body:@bg-color url('../img/main/noise.png');
+
+
+@font-size-min:   12px;
+@font-size-base:  14px;
+@font-size-large: 18px;
+@font-size-h1:    floor((@font-size-base * 2.6)); // ~36px
+@font-size-h2:    floor((@font-size-base * 2.15)); // ~30px
+@font-size-h3:    ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h4:    ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h5:    @font-size-base;
+@font-size-h6:    ceil((@font-size-base * 0.85)); // ~12px
+
+@font-family: 'arial','宋体';
+
+
+@img-logo-34: url('../img/main/somgle_34.png') no-repeat;
+
+@height-header:90px;
+//main
+//--------------------------
+
+
+//menu
+//--------------------------
+@menu-height: 80px;
+@menu-width: 80px;
+@menu-bg-color:fade(@black*2, 80%);
+@menu-bg-color-hover:fade(@black, 80%);
+
+//button
+//--------------------------
+@btn-height: 20px;
+@btn-width: 20px;
+
+
+//panel
+//--------------------------
+@panel-padding-vertical:15px;
+@panel-padding-horizontal:10px;
+@panel-bg-color:fade(@black*2, 85%);

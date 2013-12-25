@@ -1,0 +1,58 @@
+
+@import "variables";
+
+.resetStyle(){
+  body,h1,h2,h3,h4,h5,h6,p,ul,li {
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    color: @color-text;
+    font-size: @font-size-min;
+    font-family: @font-family;
+    background: @bg-body;
+    padding: 0 5%;
+  }
+  li{
+    list-style: none;
+  }
+}
+.input_init(){
+  border: solid 1px @black;
+
+}
+.transition(@sec:0.1s,@timing:ease){
+  -webkit-transition: all @sec @timing;
+  -moz-transition: all @sec @timing;
+  -ms-transition: all @sec @timing;
+  -o-transition: all @sec @timing;
+  transition: all @sec @timing;
+}
+.transition_delay(@sec:0.1s,@timing:ease){
+  -webkit-transition: all @sec @timing,all @sec @timing;
+  -moz-transition: all @sec @timing,all @sec @timing;
+  -ms-transition: all @sec @timing,all @sec @timing;
+  -o-transition: all @sec @timing,all @sec @timing;
+  transition: all @sec @timing,all @sec @timing;
+}
+.rotate(@deg:45deg) {
+  -webkit-transform: rotate(@deg);
+  -moz-transform: rotate(@deg);
+  -ms-transform: rotate(@deg);
+  -o-transform: rotate(@deg);
+  transform: rotate(@deg);
+}
+.scale(@mul:0.55) {
+  -webkit-transform: scale(@mul);
+  -moz-transform: scale(@mul);
+  -ms-transform: scale(@mul);
+  -o-transform: scale(@mul);
+  transform: scale(@mul);
+}
+.border-radius(@deg:5px){
+  -webkit-border-radius: @deg;
+  -moz-border-radius: @deg;
+  -ms-border-radius: @deg;
+  -o-border-radius: @deg;
+  border-radius: @deg;
+}

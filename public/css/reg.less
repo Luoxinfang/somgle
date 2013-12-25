@@ -1,0 +1,24 @@
+//by radish on 2013/12/19
+@import "variables";
+@import "mixins";
+.regPanel {
+  padding: @panel-padding-vertical  @panel-padding-horizontal;
+  height: 200px;
+  width: 500px;
+  margin: auto;
+  color: @color-text;
+  background-color: @panel-bg-color;
+  .border-radius(6px);
+}
+.close-btn {
+  position: relative;
+  float: right;
+  margin-top: -@panel-padding-vertical;
+  margin-right: -@panel-padding-horizontal;
+  width: @btn-width;
+  height: @btn-height;
+  text-align: center;
+  line-height: @btn-height;
+  font-size: @btn-height;
+  cursor: pointer;
+}
