@@ -6,6 +6,9 @@
     margin: 0;
     padding: 0;
   }
+  h1,h2,h3,h4,h5,h6{
+    padding: @padding-base 0px;
+  }
   body{
     color: @color-text;
     font-size: @font-size-min;
@@ -17,10 +20,7 @@
     list-style: none;
   }
 }
-.input_init(){
-  border: solid 1px @black;
 
-}
 .transition(@sec:0.1s,@timing:ease){
   -webkit-transition: all @sec @timing;
   -moz-transition: all @sec @timing;
@@ -28,7 +28,7 @@
   -o-transition: all @sec @timing;
   transition: all @sec @timing;
 }
-.transition_delay(@sec:0.1s,@timing:ease){
+.transition-delay(@sec:0.1s,@timing:ease){
   -webkit-transition: all @sec @timing,all @sec @timing;
   -moz-transition: all @sec @timing,all @sec @timing;
   -ms-transition: all @sec @timing,all @sec @timing;
@@ -49,10 +49,35 @@
   -o-transform: scale(@mul);
   transform: scale(@mul);
 }
-.border-radius(@deg:5px){
-  -webkit-border-radius: @deg;
-  -moz-border-radius: @deg;
-  -ms-border-radius: @deg;
-  -o-border-radius: @deg;
-  border-radius: @deg;
+.border-radius(@num:5px){
+  -webkit-border-radius: @num;
+  -moz-border-radius: @num;
+  -ms-border-radius: @num;
+  -o-border-radius: @num;
+  border-radius: @num;
+}
+
+//form-----------------------
+.form-init(){
+  input,button{
+    margin: 0;
+    padding: 0;
+    border: @border-base;
+    background-color: fade(@black,25%);
+    outline: none;
+  }
+  input:invalid {
+    box-shadow: 0 1px 1px fade(@red,9.5%) inset, 0 0 8px fade(@red,60%);
+  }
+  input:focus {
+    box-shadow: 0 1px 1px fade(@black,9.5%) inset, 0 0 8px fade(@blue,60%);
+  }
+  button{
+    color: @black;
+    padding: @padding-base @padding-base-4x;
+    cursor: pointer;
+  }
+  button:hover{
+    background-color: @bg-color-hover;
+  }
 }

@@ -8,7 +8,7 @@ header{
   height: @height-header;
 }
 .main{
-  height: 700px;
+  height: @main-height;
 }
 footer{
   height: @height-header;
@@ -23,11 +23,21 @@ footer{
   .transition(0.8s);
 }
 .ts_dl2{
-  .transition_delay(0.2s);
+  .transition-delay(0.2s);
 }
 .ts_dl5{
-  .transition_delay(0.5s);
+  .transition-delay(0.5s);
 }
 .ts_dl8{
-  .transition_delay(0.8s);
+  .transition-delay(0.8s);
+}
+.tips{
+  height: @font-size-min;
+}
+.row{
+  margin: @margin-base 0;
+  clear: both;
+}
+.border-bottom-split{
+  border-bottom: @border-split;
 }

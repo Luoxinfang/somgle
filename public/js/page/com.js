@@ -7,3 +7,4 @@ define(function (require, exports, module) {
 	//require('bootstrap');//we used bootstrap in our project
 
 });
+

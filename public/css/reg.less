@@ -1,15 +1,17 @@
 //by radish on 2013/12/19
 @import "variables";
 @import "mixins";
-.regPanel {
+
+.reg-panel {
   padding: @panel-padding-vertical  @panel-padding-horizontal;
-  height: 200px;
+  height: 300px;
   width: 500px;
   margin: auto;
   color: @color-text;
   background-color: @panel-bg-color;
   .border-radius(6px);
 }
+
 .close-btn {
   position: relative;
   float: right;
@@ -20,5 +22,18 @@
   text-align: center;
   line-height: @btn-height;
   font-size: @btn-height;
+  .rotate(45deg);
   cursor: pointer;
+}
+
+#reg_title {
+  margin-bottom: @margin-base-4x;
+}
+
+#reg_form {
+  margin: 0px @margin-base-8x;
+}
+.detail{
+  color: @white/5;
+  margin: @margin-base-6x @margin-base-8x;
 }
