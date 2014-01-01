@@ -7,9 +7,9 @@ define(function (require, exports, module) {
     rotateDeg: 45,
     activeIndex: 0,
     $main: $('#main'),
-    $list: $('.menu-list'),
-    $logo: $('.menu .logo'),
-    $items: $('.menu-list .item'),
+    $list: $('#menu .list'),
+    $logo: $('#menu .logo'),
+    $items: $('#menu .list .item'),
     show: function () {
       Menu.$list.toggleClass('show');
     },
@@ -23,7 +23,7 @@ define(function (require, exports, module) {
       }
       Menu.activeIndex=index;
       Menu.rotateDeg += gap * 90;
-      Menu.$list.css('WebkitTransform', 'rotate(' + Menu.rotateDeg + 'deg)');
+      Menu.$list.css({'transform': 'rotate(' + Menu.rotateDeg + 'deg)'});
       $(this).addClass('active').siblings().removeClass('active');
       //show the content
       Menu.distributeLink(index);
@@ -48,9 +48,9 @@ define(function (require, exports, module) {
 
     },
     showReg: function () {
-      var tpl=require('../../inc/register.html');
-      var _tpl = _.template(tpl);
+      var _tpl = _.template(require('../../inc/register.html'));
       $('#main').html(_tpl);
+      history.pushState('#reg');
     },
     showLogin:function(){
 
@@ -68,4 +68,6 @@ define(function (require, exports, module) {
     }
   };
   Menu.init();
+
+  Menu.showReg();
 });

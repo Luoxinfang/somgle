@@ -4,6 +4,7 @@
 define(function (require, exports, module) {
   var $=require('jquery');
   var _=require('underscore');
-	require('bootstrap');//we used bootstrap in our project
+	//require('bootstrap');//we used bootstrap in our project
 
 });
+

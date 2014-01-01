@@ -1,22 +1,34 @@
-<div class="panel">
-  <div class="close-btn">×</div>
-  <div class="from">
-    <h2 id="LoginTitle" class="hd">登录<span class="red">MySpace</span>系统</h2>
-    <div id="tip_login" class="tips m-top">Please input your password to enter the system</div>
-    <div class="ipt-b">
-      <input id="in_pwd"  class="pwdInput" type="password" name="password">
-      <button class="btnSubmit" type="submit" onclick="user.login.checkPWD();">登录</button>
+<div class="reg-panel">
+  <div class="close-btn">+</div>
+  <h2 id="reg_title" class="border-bottom-split">
+    <span class="glyphicon glyphicon-cloud"></span>
+    <span class="red">用户注册</span>
+  </h2>
+  <div id="reg_form">
+    <div class="row input-group">
+      <span class="input-group-addon glyphicon glyphicon-envelope"></span>
+      <input class="form-control" id="user_email" name="email" type="email" placeholder="请输入您的邮箱">
     </div>
-    <div id="space_pwd">
+    <div class="tips">
 
     </div>
-    <div class="p-enter">
-      <span id="set_pwd" onclick="user.reg.setPWD();">设置密码</span>&nbsp;&nbsp;
-      <span id="modify_pwd" onclick="user.reg.changePWD();">修改密码</span>&nbsp;&nbsp;
-      <span id="move_enter" onclick="user.reg.removeInput();">取消</span>
+    <div class="row input-group">
+      <span class="input-group-addon glyphicon glyphicon-user"></span>
+      <input class="form-control" id="user_nickname" name="nickname" type="text" placeholder="请输入您的昵称">
     </div>
-    <div class="detail">
-      为了您的数据安全,访问需要密码.如果您忘记了密码,那么...
+    <div class="tips">
+
     </div>
+    <div class="row input-group">
+      <span class="input-group-addon glyphicon glyphicon-lock"></span>
+      <input class="form-control" id="user_password" name="password" type="password" placeholder="请输入您的密码">
+    </div>
+    <div class="tips">
+
+    </div>
+    <button>提交</button>
+  </div>
+  <div class="detail">
+    我们会严格保护您的数据安全，除非地球上爆发核战争...
   </div>
 </div>

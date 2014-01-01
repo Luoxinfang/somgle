@@ -1,0 +1,17 @@
+/**
+ * by radish on 2013/12/29
+ * variables
+ */
+.login-panel {
+  padding: 15px 10px;
+  height: 230px;
+  width: 500px;
+  margin: 10px auto 0;
+  color: #ffffff;
+  background-color: rgba(102, 102, 102, 0.85);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+}

@@ -6,6 +6,7 @@ seajs.config({
   alias:{
     'text':'radish/build/seajs-text',
     'jquery':'radish/lib/jquery-2.0.3',
+    'jPlayer':'radish/lib/jquery.jplayer',
     'jquery.cookie':'radish/lib/jquery.cookie',
     'lodash':'radish/lib/lodash',
     'underscore':'radish/lib/underscore',
