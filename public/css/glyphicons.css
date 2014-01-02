@@ -219,10 +219,10 @@
 .icon-paypal:before {
   content: "\e63e";
 }
-.icon-pause2:before {
+.icon-pause:before {
   content: "\e63f";
 }
-.icon-pause:before {
+.icon-pause2:before {
   content: "\e640";
 }
 .icon-paragraph-right:before {

@@ -8,7 +8,7 @@
   background-image: url("http://somgle-cover.qiniudn.com/Shayne_Ward-Breathless.jpg");
   animation-paly-state: running;
   &:after {
-    position: relative;
+    position: absolute;
     left: (@cd-width - @cd-eye-width) /2 - @cd-eye-border-size;
     top: (@cd-height - @cd-eye-height) /2 - @cd-eye-border-size;
     background: @white;
@@ -21,9 +21,11 @@
   }
   .img-circle;
 }
+
 .rt {
   .animation-rotate(20s);
 }
+
 .stop-rt {
   animation-paly-state: paused;
 }

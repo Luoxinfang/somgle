@@ -55,7 +55,7 @@
   border-radius: 50%;
 }
 .cd:after {
-  position: relative;
+  position: absolute;
   left: 86px;
   top: 86px;
   background: #ffffff;

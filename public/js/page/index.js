@@ -46,6 +46,7 @@ define(function (require, exports, module) {
         default :
           title='hall';
           tpl = require('../../inc/hall.html');
+          Player.init();
       }
       this.showPage('#'+title, tpl);
     },
@@ -60,8 +61,34 @@ define(function (require, exports, module) {
     init: function () {
       this.lastIndex = this.$items.length - 1;
       this.bindEvent();
-      this.distributeLink(1);
+      this.distributeLink();
     }
   };
   Menu.init();
+
+
+
+  var Player={
+    $player:$('#player'),
+    songUrl:'http://somgle-song.qiniudn.com/Shayne_Ward-Until_you.mp3',
+
+    play: function () {
+      var that=this,
+        url=this.songUrl;
+      that.$player.jPlayer({
+        ready:function(e){
+          $(this).jPlayer('setMedia',{
+            mp3:url
+          })
+        }
+      });
+    },
+
+
+
+    init:function(){
+      require('jPlayer');
+      this.play();
+    }
+  };
 });
