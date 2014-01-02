@@ -21,7 +21,7 @@ define(function (require, exports, module) {
       } else if (index == 0 && Menu.activeIndex == Menu.lastIndex) {
         gap = -1;
       }
-      Menu.activeIndex=index;
+      Menu.activeIndex = index;
       Menu.rotateDeg += gap * 90;
       Menu.$list.css({'transform': 'rotate(' + Menu.rotateDeg + 'deg)'});
       $(this).addClass('active').siblings().removeClass('active');
@@ -29,45 +29,39 @@ define(function (require, exports, module) {
       Menu.distributeLink(index);
     },
     distributeLink: function (index) {
-      switch (index){
-        case 0:
-          this.showIndex();
-          break;
+      var title = '', tpl = '';
+      switch (index) {
         case 1:
-          this.showReg();
+          title='register';
+          tpl = require('../../inc/register.html');
           break;
         case 2:
-          this.showLogin();
+          title='login';
+          tpl = require('../../inc/login.html');
           break;
         case 3:
-          this.showSettings();
+          title = 'settings';
+          tpl='';
           break;
+        default :
+          title='hall';
+          tpl = require('../../inc/hall.html');
       }
+      this.showPage('#'+title, tpl);
     },
-    showIndex: function () {
-
+    showPage: function (title, tpl) {
+      title && history.pushState(title);
+      this.$main.html(_.template(tpl));
     },
-    showReg: function () {
-      var _tpl = _.template(require('../../inc/register.html'));
-      $('#main').html(_tpl);
-      history.pushState('#reg');
-    },
-    showLogin:function(){
-
-    },
-    showSettings:function(){
-
-    },
-    bindEvent:function(){
+    bindEvent: function () {
       this.$logo.on('click', this.show);
       this.$items.on('click', this.rotateToTop);
     },
     init: function () {
       this.lastIndex = this.$items.length - 1;
       this.bindEvent();
+      this.distributeLink(1);
     }
   };
   Menu.init();
-
-  Menu.showReg();
 });

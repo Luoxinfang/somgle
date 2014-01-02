@@ -2,35 +2,81 @@
  * by radish on 2013/12/29
  * variables
  */
-.cd {
-  width: 220px;
-  height: 220px;
-  border: solid 1px #ffffff;
-  box-shadow: 0px 0px 5px #333333;
-  -webkit-transform: skew(-25deg) rotateX(55deg);
-  -webkit-animation: cd-rotate 30s infinite linear;
-  background-image: url("http://somgle-cover.qiniudn.com/Shayne_Ward-Breathless.jpg");
+@-webkit-keyframes rotate-frames {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }
-.cd:before {
-  display: block;
-  position: relative;
-  left: 85px;
-  top: 85px;
-  width: 50px;
-  height: 50px;
-  background-color: #ffffff;
-  content: "&nbsp";
+@-moz-keyframes rotate-frames {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-ms-keyframes rotate-frames {
+  from {
+    -ms-transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotate-frames {
+  from {
+    -o-transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(360deg);
+  }
+}
+@keyframes rotate-frames {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.cd {
+  display: inline-block;
+  width: 240px;
+  height: 240px;
+  background-image: url("http://somgle-cover.qiniudn.com/Shayne_Ward-Breathless.jpg");
+  animation-paly-state: running;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
 }
-@-webkit-keyframes cd-rotate {
-  0% {
-    -webkit-transform: skew(-25deg) rotateX(55deg) rotate(0deg);
-  }
-  100% {
-    -webkit-transform: skew(-25deg) rotateX(55deg) rotate(360deg);
-  }
+.cd:after {
+  position: relative;
+  left: 86px;
+  top: 86px;
+  background: #ffffff;
+  display: inline-block;
+  border: solid 18px rgba(64, 64, 64, 0.75);
+  width: 32px;
+  height: 32px;
+  content: '';
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+.rt {
+  -webkit-animation: 'rotate-frames' 20s infinite linear;
+  -moz-animation: 'rotate-frames' 20s infinite linear;
+  -ms-animation: 'rotate-frames' 20s infinite linear;
+  -o-animation: 'rotate-frames' 20s infinite linear;
+  animation: 'rotate-frames' 20s infinite linear;
+}
+.stop-rt {
+  animation-paly-state: paused;
 }

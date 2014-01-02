@@ -1,3 +1,29 @@
-.cd{
+@import "variables";
+@import "mixins";
+
+.cd {
+  display: inline-block;
+  width: @cd-width;
+  height: @cd-height;
   background-image: url("http://somgle-cover.qiniudn.com/Shayne_Ward-Breathless.jpg");
+  animation-paly-state: running;
+  &:after {
+    position: relative;
+    left: (@cd-width - @cd-eye-width) /2 - @cd-eye-border-size;
+    top: (@cd-height - @cd-eye-height) /2 - @cd-eye-border-size;
+    background: @white;
+    display: inline-block;
+    border: solid @cd-eye-border-size @cd-eye-border-color;
+    width: @cd-eye-width;
+    height: @cd-eye-height;
+    content: '';
+    .img-circle;
+  }
+  .img-circle;
+}
+.rt {
+  .animation-rotate(20s);
+}
+.stop-rt {
+  animation-paly-state: paused;
 }
