@@ -4,9 +4,10 @@
 seajs.config({
   base:'/js',
   alias:{
-    'text':'radish/build/seajs-text',
-    'jquery':'radish/lib/jquery-2.0.3',
+    'class':'radish/lib/class',
+    'jQuery':'radish/lib/jquery-2.0.3',
     'jPlayer':'radish/lib/jquery.jplayer',
+    'text':'radish/build/seajs-text',
     'jquery.cookie':'radish/lib/jquery.cookie',
     'lodash':'radish/lib/lodash',
     'underscore':'radish/lib/underscore',
@@ -16,6 +17,6 @@ seajs.config({
     'Date':'radish/core/date',
     'Key':'radish/core/key'
   },
-  preload:['text']
+  preload:['jQuery','text']
 });
 

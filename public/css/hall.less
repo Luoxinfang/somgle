@@ -1,16 +1,51 @@
 @import "variables";
 @import "mixins";
 
+.cd-player {
+  position: relative;
+  overflow: hidden;
+  width: @cd-player-width;
+  height: @cd-player-height;
+  .btn{
+    height: 30px;
+    line-height: 30px;
+    font-size: @font-size-h2;
+    color: @menu-bg-color;
+    text-align: center;
+    font-family: @font-family-glyphicon;
+    li{
+      display: inline-block;
+      padding: 0 @padding-base-4x;
+      &:hover{
+        color: @bg-color-hover;
+      }
+    }
+    .pre:after{
+      content: '\e634';
+    }
+    .pause:after{
+      content: '\e63f';
+    }
+    .play:after{
+      content: '\e637';
+    }
+    .next:after{
+      content: '\e648';
+    }
+  }
+}
+
 .cd {
-  display: inline-block;
   width: @cd-width;
   height: @cd-height;
-  background-image: url("http://somgle-cover.qiniudn.com/Shayne_Ward-Breathless.jpg");
+  background:@bg-color url("http://somgle-cover.qiniudn.com/Shayne_Ward-Breathless.jpg");
+  box-shadow: 0 0 12px 6px fade(@black, 60);
+  margin: @margin-base-3x;
   animation-paly-state: running;
   &:after {
     position: absolute;
-    left: (@cd-width - @cd-eye-width) /2 - @cd-eye-border-size;
-    top: (@cd-height - @cd-eye-height) /2 - @cd-eye-border-size;
+    left: (@cd-width - @cd-eye-width) /2 - @cd-eye-border-size + @margin-base-3x;
+    top: (@cd-height - @cd-eye-height) /2 - @cd-eye-border-size + @margin-base-3x;
     background: @white;
     display: inline-block;
     border: solid @cd-eye-border-size @cd-eye-border-color;
@@ -28,4 +63,16 @@
 
 .stop-rt {
   animation-paly-state: paused;
+}
+
+.pickup-arm {
+  position: absolute;
+  top:-@cd-player-arm-height/2 + @cd-player-arm-width;
+  left: @cd-width+@cd-player-arm-width+@padding-base-2x;
+  height: @cd-player-arm-height;
+  width: @cd-player-arm-width;
+  z-index: -1;
+  background: url("../img/main/pickup-arm.png");
+  clip:rect(@cd-player-arm-height/2,@cd-player-arm-width,@cd-player-arm-height,0px) ;
+  .rotate(15deg);
 }

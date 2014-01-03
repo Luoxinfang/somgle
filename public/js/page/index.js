@@ -3,6 +3,8 @@
  */
 'use strict';
 define(function (require, exports, module) {
+  var _ = require('underscore');
+  var Player = require('../module/player');
   var Menu = {
     rotateDeg: 45,
     activeIndex: 0,
@@ -25,33 +27,40 @@ define(function (require, exports, module) {
       Menu.rotateDeg += gap * 90;
       Menu.$list.css({'transform': 'rotate(' + Menu.rotateDeg + 'deg)'});
       $(this).addClass('active').siblings().removeClass('active');
-      //show the content
+      //show the page
       Menu.distributeLink(index);
     },
     distributeLink: function (index) {
-      var title = '', tpl = '';
+      var that = this;
       switch (index) {
         case 1:
-          title='register';
-          tpl = require('../../inc/register.html');
+          require.async('../../inc/register.html', function (tpl) {
+            that.showPage('#register', tpl);
+
+          });
           break;
         case 2:
-          title='login';
-          tpl = require('../../inc/login.html');
+          require.async('../../inc/login.html', function (tpl) {
+            that.showPage('#login', tpl);
+
+          });
           break;
         case 3:
-          title = 'settings';
-          tpl='';
+          require.async('../../inc/login.html', function (tpl) {
+            that.showPage('#settings', tpl);
+
+          });
           break;
         default :
-          title='hall';
-          tpl = require('../../inc/hall.html');
-          Player.init();
+          require.async('../../inc/hall.html', function (tpl) {
+            that.showPage('#hall', tpl);
+            new Player;
+          });
       }
-      this.showPage('#'+title, tpl);
+
     },
     showPage: function (title, tpl) {
-      title && history.pushState(title);
+      //title && history.pushState(title);
       this.$main.html(_.template(tpl));
     },
     bindEvent: function () {
@@ -65,30 +74,4 @@ define(function (require, exports, module) {
     }
   };
   Menu.init();
-
-
-
-  var Player={
-    $player:$('#player'),
-    songUrl:'http://somgle-song.qiniudn.com/Shayne_Ward-Until_you.mp3',
-
-    play: function () {
-      var that=this,
-        url=this.songUrl;
-      that.$player.jPlayer({
-        ready:function(e){
-          $(this).jPlayer('setMedia',{
-            mp3:url
-          })
-        }
-      });
-    },
-
-
-
-    init:function(){
-      require('jPlayer');
-      this.play();
-    }
-  };
 });
