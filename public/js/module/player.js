@@ -18,7 +18,7 @@ define(function (require, exports, module) {
       this.$playBtn = $('#player .play');
       this.$pauseBtn = $('#player .pause');
       this.$lyric = $('#lyric>ul');
-      this.$title = $('#lyric #title')
+      this.$tip = $('#lyric>#tip');
       this.songUrl = 'http://somgle-song.qiniudn.com/Shayne_Ward-Until_you.mp3';
       this.lyricUrl = 'http://somgle-lyric.qiniudn.com/Shayne_Ward-Until_you.lrc';
       this.lyrics = [];
@@ -44,7 +44,6 @@ define(function (require, exports, module) {
       this.$music.jPlayer('play');
       this.$playBtn.hide();
       this.$pauseBtn.show();
-      this.getLyrics();
     },
     pause: function () {
       this.$music.jPlayer('pause');
@@ -54,6 +53,7 @@ define(function (require, exports, module) {
     initPlayer: function () {
       var that = this,
         url = this.songUrl;
+      that.getLyrics();
       that.$music.jPlayer({
         ready: function () {
           $(this).jPlayer('setMedia', {
@@ -61,20 +61,26 @@ define(function (require, exports, module) {
           });
         },
         timeupdate: function (e) {
-          var jPlayer = e.jPlayer;
-          var lyrics = that.lyrics;
-          var currentTime = Math.floor(jPlayer.status.currentTime);
-          for (var i = 0; i < lyrics.length; i++) {
-            var time2 = new Array();
-            time2 = lyrics[i][0].split(":");
-            var time3 = Math.floor(time2[0]) * 60 + Math.floor(time2[1]);
-            if (currentTime === time3) {
-              that.$lyric.children('li').removeClass().eq(i).addClass("now");
-              that.$lyric.animate({"top": -14 * i + "px"}, 400, function () {
-                return
-              });
+          var jPlayer = e.jPlayer,
+            lyrics = that.lyrics,
+            currentTime = Math.floor(jPlayer.status.currentTime),
+            lineHeight = that.$lyric.children('li').height(),
+            lyricMiddle = that.$player.height() / 2 - lineHeight;
+          for (var i = 0, l = lyrics.length; i < l; i++) {
+            var lineTime = lyrics[i][0].split(":"),
+              startTime = Math.floor(lineTime[0]) * 60 + Math.floor(lineTime[1]);
+            if (currentTime == startTime) {
+              if (lineHeight * i >= lyricMiddle && lineHeight * (l - i ) >= lyricMiddle) {
+                that.$lyric.css({
+                  'top': -lineHeight * (i - Math.ceil(lyricMiddle / lineHeight)) + "px"
+                });
+              }
+              that.$lyric.children('li').removeClass('now').eq(i).addClass('now');
             }
           }
+        },
+        ended:function(){
+          that.rotateCD();
         }
       });
     },
@@ -89,31 +95,34 @@ define(function (require, exports, module) {
         lyricsArr = [];
       for (var i = 0, j = 0, l = lyrics.length; i < l; i++) {
         var lyric = lyrics[i],
-          title,author,album;
+          title, author, album;
         if (lyric.split(']')[1]) {
           var lyricContent = lyric.substring(10);
           that.lyrics[j] = [];
           that.lyrics[j].push(lyric.substring(1, 8));
           that.lyrics[j].push(lyricContent);
-          lyricsArr.push('<li>' + lyricContent + '</li>');
+          lyricsArr.push('<li class="ts2">' + lyricContent + '</li>');
           j++;
         } else {
-          var t=lyric.replace(/\[|\]/g,'').split(':');
-          switch (t[0]){
+          var t = lyric.replace(/\[|\]/g, '').split(':');
+          switch (t[0]) {
             case 'ti':
-              title=t[1];
+              title = t[1];
               break;
             case 'ar':
-              author=t[1];
+              author = t[1];
               break;
             case 'al':
-              album=t[1];
+              album = t[1];
               break;
           }
         }
       }
-      this.$lyric.html(lyricsArr.join(''));
-      //this.$title.html(title);
+      if(lyricsArr.length == 0){
+        this.$tip.html('歌词好像被我丢在路上了...');
+      }else{
+        this.$lyric.html(lyricsArr.join(''));
+      }
     }
   });
   module.exports = Player;
