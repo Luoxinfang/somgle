@@ -12,11 +12,11 @@ define(function (require, exports, module) {
   var Player = Class.extend({
     init: function () {
       this.$music = $('#music_player');
-      this.$player = $('#player');
+      this.$player = $('#jp_container');
       this.$CD = $('#cd');
       this.$pickupArm = $('#pickup_arm');
-      this.$playBtn = $('#player .play');
-      this.$pauseBtn = $('#player .pause');
+      this.$playBtn = $('.jp-play');
+      this.$pauseBtn = $('.jp-pause');
       this.$lyric = $('#lyric>ul');
       this.$tip = $('#lyric>#tip');
       this.songUrl = 'http://somgle-song.qiniudn.com/Shayne_Ward-Until_you.mp3';
@@ -25,30 +25,9 @@ define(function (require, exports, module) {
       this.bindEvent();
       this.initPlayer();
     },
-    bindEvent: function () {
-      var that = this;
-      this.$playBtn.on('click', function () {
-        that.play();
-        that.rotateCD();
-      });
-      this.$pauseBtn.on('click', function () {
-        that.pause();
-        that.rotateCD();
-      });
-    },
     rotateCD: function () {
       this.$CD.toggleClass('stop-rt');
       this.$pickupArm.toggleClass('pick');
-    },
-    play: function () {
-      this.$music.jPlayer('play');
-      this.$playBtn.hide();
-      this.$pauseBtn.show();
-    },
-    pause: function () {
-      this.$music.jPlayer('pause');
-      this.$pauseBtn.hide();
-      this.$playBtn.show();
     },
     initPlayer: function () {
       var that = this,
@@ -81,7 +60,8 @@ define(function (require, exports, module) {
         },
         ended:function(){
           that.rotateCD();
-        }
+        },
+        wmode: "window"
       });
     },
     getLyrics: function () {
@@ -124,7 +104,17 @@ define(function (require, exports, module) {
       }else{
         this.$lyric.html(lyricsArr.join(''));
       }
+    },
+    bindEvent: function () {
+      var that = this;
+      this.$playBtn.on('click', function () {
+        that.rotateCD();
+      });
+      this.$pauseBtn.on('click', function () {
+        that.rotateCD();
+      });
     }
+
   });
   module.exports = Player;
 });

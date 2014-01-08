@@ -7,6 +7,19 @@
   overflow: hidden;
   width: @cd-player-width;
   height: @cd-player-height;
+  .jp-progress{
+
+    .jp-seek-bar{
+      height: @jp-progress-height;
+      background-color: @bg-color;
+    }
+    .jp-play-bar{
+      height: @jp-progress-height;
+      background-color: @blue;
+
+    }
+  }
+
   .btn {
     height: 30px;
     line-height: 30px;
@@ -24,10 +37,10 @@
     .pre:after {
       content: '\e634';
     }
-    .pause:after {
+    .jp-pause:after {
       content: '\e63f';
     }
-    .play:after {
+    .jp-play:after {
       content: '\e637';
     }
     .next:after {
@@ -35,7 +48,6 @@
     }
   }
 }
-
 .cd {
   width: @cd-width;
   height: @cd-height;
