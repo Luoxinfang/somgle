@@ -103,7 +103,8 @@ define(function (require, exports, module) {
           that.lyrics[j].push(lyricContent);
           lyricsArr.push('<li class="ts2">' + lyricContent + '</li>');
           j++;
-        } else {
+        }
+        /*else {
           var t = lyric.replace(/\[|\]/g, '').split(':');
           switch (t[0]) {
             case 'ti':
@@ -116,7 +117,7 @@ define(function (require, exports, module) {
               album = t[1];
               break;
           }
-        }
+        }*/
       }
       if(lyricsArr.length == 0){
         this.$tip.html('歌词好像被我丢在路上了...');
