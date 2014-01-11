@@ -10,14 +10,6 @@
     -webkit-transform: rotate(360deg);
   }
 }
-@-moz-keyframes rotate-frames {
-  from {
-    -moz-transform: rotate(0deg);
-  }
-  to {
-    -moz-transform: rotate(360deg);
-  }
-}
 @-ms-keyframes rotate-frames {
   from {
     -ms-transform: rotate(0deg);
@@ -67,7 +59,7 @@ body {
   color: #ffffff;
   font-size: 12px;
   font-family: 'arial', '宋体';
-  background: #999999 url('../img/main/noise.png');
+  background: #eeeeee;
   padding: 0 5%;
 }
 li {

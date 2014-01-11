@@ -54,11 +54,10 @@
 
 //
 .animation-rotate(@time:30s) {
-  -webkit-animation: 'rotate-frames' @time infinite linear;
-  -moz-animation: 'rotate-frames' @time infinite linear;
-  -ms-animation: 'rotate-frames' @time infinite linear;
-  -o-animation: 'rotate-frames' @time infinite linear;
-  animation: 'rotate-frames' @time infinite linear;
+  -webkit-animation: rotate-frames @time infinite linear;
+  -ms-animation: rotate-frames @time infinite linear;
+  -o-animation: rotate-frames @time infinite linear;
+  animation: rotate-frames @time infinite linear;
 }
 
 @-webkit-keyframes rotate-frames {
@@ -69,16 +68,6 @@
     -webkit-transform: rotate(360deg);
   }
 }
-
-@-moz-keyframes rotate-frames {
-  from {
-    -moz-transform: rotate(0deg);
-  }
-  to {
-    -moz-transform: rotate(360deg);
-  }
-}
-
 @-ms-keyframes rotate-frames {
   from {
     -ms-transform: rotate(0deg);
@@ -105,12 +94,18 @@
     transform: rotate(360deg);
   }
 }
+
 .border-radius(@num:5px) {
   -webkit-border-radius: @num;
   -moz-border-radius: @num;
   -ms-border-radius: @num;
   -o-border-radius: @num;
   border-radius: @num;
+}
+
+.box-shadow(@hor:0px,@ver:0px,@blur,@spread:0px,@color,@type:'') {
+  box-shadow: @hor @ver @blur @spread @color @type;
+  -webkit-box-shadow: @hor @ver @blur @spread @color @type;
 }
 
 //form--------------------

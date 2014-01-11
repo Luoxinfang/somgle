@@ -6,15 +6,18 @@
 // Global
 //-------------------------
 @white: #ffffff;
+@gray:#eeeeee;
+@deep-gray:#cccccc;
 @red: #ff1314;
 @blue: #5252ff;
 @black: #333333;
+@light-black:#999999;
 
-@bg-color: #999999;
+@bg-color: @light-black;
 @color-text: lighten(@white, 10%);
 @bg-color-hover: @bg-color / 2;
 @bg-color-active: @bg-color / 3;
-@bg-body: @bg-color url('../img/main/noise.png');
+@bg-body: @gray;
 
 @font-size-min: 12px;
 @font-size-base: 14px;
@@ -91,12 +94,17 @@
 
 //player
 //---------------------------
-@jp-progress-height:15px;
+@jp-bar-width:260px;
+@jp-bar-height:15px;
+@jp-bar-bg-color:#FFFFFF;
+@jp-bar-border-color:@deep-gray;
 
+@jp-bar-filler-color:fade(@deep-gray,50%);
+@jp-bar-border: solid 1px @jp-bar-border-color;
 //CD
 //---------------------------
 @cd-player-width: 300px;
-@cd-player-height: 320px;
+@cd-player-height: 380px;
 @cd-width: 240px;
 @cd-height: @cd-width;
 @cd-eye-width: 32px;

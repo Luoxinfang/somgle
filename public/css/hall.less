@@ -7,19 +7,32 @@
   overflow: hidden;
   width: @cd-player-width;
   height: @cd-player-height;
-  .jp-progress{
-
-    .jp-seek-bar{
-      height: @jp-progress-height;
-      background-color: @bg-color;
+  .jp-progress {
+    .jp-volume-bar {
+      height: @jp-bar-height;
+      background-color: @light-black;
     }
-    .jp-play-bar{
-      height: @jp-progress-height;
+    .jp-volume-bar-value {
+      height: @jp-bar-height;
       background-color: @blue;
-
+    }
+    .jp-seek-bar {
+      overflow: hidden;
+      height: @jp-bar-height;
+      background-color: @white;
+      border: inset 1px @gray;
+      margin-top: @padding-base-2x;
+      .border-radius(@jp-bar-height/2);
+      //.box-shadow(0px, 0px, 20px, -5px, @black, inset);
+    }
+    .jp-play-bar {
+      position: relative;
+      left: -1px;
+      height: @jp-bar-height;
+      background-color: @light-black;
+      .border-radius(@jp-bar-height/2);
     }
   }
-
   .btn {
     height: 30px;
     line-height: 30px;
@@ -48,22 +61,24 @@
     }
   }
 }
+
 .cd {
   width: @cd-width;
   height: @cd-height;
   background: @bg-color url("http://somgle-cover.qiniudn.com/Shayne_Ward-Breathless.jpg");
-  box-shadow: 0 0 12px 6px fade(@black, 60);
+  box-shadow: 0 0 10px 6px fade(@black, 60);
   margin: @margin-base-3x;
   &:after {
     position: absolute;
     left: (@cd-width - @cd-eye-width) /2 - @cd-eye-border-size;
     top: (@cd-height - @cd-eye-height) /2 - @cd-eye-border-size;
-    background: @white;
+    background: @gray;
     display: inline-block;
     border: solid @cd-eye-border-size @cd-eye-border-color;
     width: @cd-eye-width;
     height: @cd-eye-height;
     content: '';
+    opacity: 0.5;
     .img-circle;
   }
   .img-circle;
@@ -75,7 +90,6 @@
 
 .stop-rt {
   -webkit-animation-play-state: paused;
-  -moz-animation-play-state: paused;
   -ms-animation-play-state: paused;
   -o-animation-play-state: paused;
   animation-play-state: paused;
@@ -91,25 +105,26 @@
   background: url("../img/main/pickup-arm.png");
   clip: rect(@cd-player-arm-height/2,@cd-player-arm-width,@cd-player-arm-height, 0px);
 }
-.pick{
+
+.pick {
   .rotate(15deg);
 }
 
-.lyric{
+.lyric {
   float: left;
   margin-left: @padding-base-4x;
   width: 500px;
   height: 300px;
   color: @black;
   overflow: hidden;
-  ul{
+  ul {
     position: relative;
-    li{
+    li {
       font-size: @font-size-h5;
       height: @font-size-h4;
       line-height: @font-size-h4;
     }
-    li.now{
+    li.now {
       color: @red;
       font-size: @font-size-h4;
     }
