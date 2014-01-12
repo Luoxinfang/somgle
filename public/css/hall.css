@@ -41,63 +41,57 @@
   width: 300px;
   height: 380px;
 }
-.player .jp-progress .jp-volume-bar {
-  height: 15px;
-  background-color: #999999;
-}
-.player .jp-progress .jp-volume-bar-value {
-  height: 15px;
-  background-color: #5252ff;
-}
 .player .jp-progress .jp-seek-bar {
+  color: #333333;
   overflow: hidden;
   height: 15px;
   background-color: #ffffff;
   border: inset 1px #eeeeee;
   margin-top: 10px;
-  -webkit-border-radius: 7.5px;
-  -moz-border-radius: 7.5px;
-  -ms-border-radius: 7.5px;
-  -o-border-radius: 7.5px;
-  border-radius: 7.5px;
+  -webkit-border-radius: 8.5px;
+  -ms-border-radius: 8.5px;
+  -o-border-radius: 8.5px;
+  border-radius: 8.5px;
 }
-.player .jp-progress .jp-play-bar {
-  position: relative;
-  left: -1px;
+.player .jp-progress .jp-seek-bar .jp-play-bar {
   height: 15px;
   background-color: #999999;
-  -webkit-border-radius: 7.5px;
-  -moz-border-radius: 7.5px;
-  -ms-border-radius: 7.5px;
-  -o-border-radius: 7.5px;
-  border-radius: 7.5px;
+}
+.player .jp-progress .jp-seek-bar .jp-current-time {
+  float: left;
+  margin: -15px 0 0 5px;
+}
+.player .jp-progress .jp-seek-bar .jp-duration {
+  float: right;
+  margin: -15px 5px 0 0;
 }
 .player .btn {
+  margin-top: 10px;
   height: 30px;
   line-height: 30px;
   font-size: 30px;
   color: rgba(102, 102, 102, 0.8);
-  text-align: center;
   font-family: 'icomoon';
 }
 .player .btn li {
   display: inline-block;
-  padding: 0 20px;
 }
 .player .btn li:hover {
   color: #4d4d4d;
 }
-.player .btn .pre:after {
-  content: '\e634';
+.player .btn .jp-volume-bar {
+  width: 80px;
+  height: 5px;
+  border: inset 1px #eeeeee;
+  margin: -17px 0 0 30px;
+  background-color: #ffffff;
 }
-.player .btn .jp-pause:after {
-  content: '\e63f';
+.player .btn .jp-volume-bar .jp-volume-bar-value {
+  height: 5px;
+  background-color: #5252ff;
 }
-.player .btn .jp-play:after {
-  content: '\e637';
-}
-.player .btn .next:after {
-  content: '\e648';
+.player .btn .jp-pause {
+  display: none;
 }
 .cd {
   width: 240px;
@@ -106,7 +100,6 @@
   box-shadow: 0 0 10px 6px rgba(51, 51, 51, 0.6);
   margin: 15px;
   -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
@@ -123,7 +116,6 @@
   content: '';
   opacity: 0.5;
   -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;

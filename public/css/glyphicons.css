@@ -193,14 +193,11 @@
 .icon-point-up:before {
   content: "\e636";
 }
-.icon-play3:before {
+.icon-play:before {
   content: "\e637";
 }
 .icon-play2:before {
   content: "\e638";
-}
-.icon-play:before {
-  content: "\e639";
 }
 .icon-pie:before {
   content: "\e63b";

@@ -8,56 +8,55 @@
   width: @cd-player-width;
   height: @cd-player-height;
   .jp-progress {
-    .jp-volume-bar {
-      height: @jp-bar-height;
-      background-color: @light-black;
-    }
-    .jp-volume-bar-value {
-      height: @jp-bar-height;
-      background-color: @blue;
-    }
     .jp-seek-bar {
+      color: @black;
       overflow: hidden;
       height: @jp-bar-height;
       background-color: @white;
       border: inset 1px @gray;
       margin-top: @padding-base-2x;
-      .border-radius(@jp-bar-height/2);
+      .border-radius(@jp-bar-height/2+1);
       //.box-shadow(0px, 0px, 20px, -5px, @black, inset);
-    }
-    .jp-play-bar {
-      position: relative;
-      left: -1px;
-      height: @jp-bar-height;
-      background-color: @light-black;
-      .border-radius(@jp-bar-height/2);
+      .jp-play-bar {
+        height: @jp-bar-height;
+        background-color: @light-black;
+      }
+      .jp-current-time{
+        float: left;
+        margin: -@jp-bar-height 0 0 @padding-base;
+      }
+      .jp-duration{
+        float: right;
+        margin: -@jp-bar-height @padding-base 0 0;
+      }
     }
   }
   .btn {
-    height: 30px;
-    line-height: 30px;
+    margin-top: @padding-base-2x;
+    height: @jp-btn-height;
+    line-height: @jp-btn-height;
     font-size: @font-size-h2;
     color: @menu-bg-color;
-    text-align: center;
     font-family: @font-family-glyphicon;
     li {
       display: inline-block;
-      padding: 0 @padding-base-4x;
       &:hover {
         color: @bg-color-hover;
       }
     }
-    .pre:after {
-      content: '\e634';
+    .jp-volume-bar {
+      width: @jp-volume-bar-width;
+      height: @padding-base;
+      border: inset 1px @gray;
+      margin: -@jp-btn-height/2-2 0 0 30px;
+      background-color: @white;
+      .jp-volume-bar-value {
+        height: @padding-base;
+        background-color: @blue;
+      }
     }
-    .jp-pause:after {
-      content: '\e63f';
-    }
-    .jp-play:after {
-      content: '\e637';
-    }
-    .next:after {
-      content: '\e648';
+    .jp-pause {
+      display: none;
     }
   }
 }

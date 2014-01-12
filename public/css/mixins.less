@@ -97,12 +97,22 @@
 
 .border-radius(@num:5px) {
   -webkit-border-radius: @num;
-  -moz-border-radius: @num;
   -ms-border-radius: @num;
   -o-border-radius: @num;
   border-radius: @num;
 }
-
+.border-radius-top-left(@num:5px) {
+  -webkit-border-top-left-radius: @num;
+  -ms-border-top-left-radius: @num;
+  -o-border-top-left-radius: @num;
+  border-top-left-radius: @num;
+}
+.border-radius-bottom-left(@num:5px) {
+  -webkit-border-bottom-left-radius: @num;
+  -ms-border-bottom-left-radius: @num;
+  -o-border-bottom-left-radius: @num;
+  border-bottom-left-radius: @num;
+}
 .box-shadow(@hor:0px,@ver:0px,@blur,@spread:0px,@color,@type:'') {
   box-shadow: @hor @ver @blur @spread @color @type;
   -webkit-box-shadow: @hor @ver @blur @spread @color @type;
