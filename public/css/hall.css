@@ -39,9 +39,9 @@
   position: relative;
   overflow: hidden;
   width: 300px;
-  height: 380px;
+  height: 880px;
 }
-.player .jp-progress .jp-seek-bar {
+.player .jp-seek-bar {
   color: #333333;
   overflow: hidden;
   height: 15px;
@@ -53,25 +53,47 @@
   -o-border-radius: 8.5px;
   border-radius: 8.5px;
 }
-.player .jp-progress .jp-seek-bar .jp-play-bar {
+.player .jp-seek-bar .jp-play-bar {
   height: 15px;
   background-color: #999999;
 }
-.player .jp-progress .jp-seek-bar .jp-current-time {
+.player .jp-seek-bar .jp-current-time {
   float: left;
   margin: -15px 0 0 5px;
 }
-.player .jp-progress .jp-seek-bar .jp-duration {
+.player .jp-seek-bar .jp-duration {
   float: right;
   margin: -15px 5px 0 0;
 }
-.player .btn {
+.player .volume-bar {
+  display: inline-block;
+  color: rgba(102, 102, 102, 0.8);
+  width: 98px;
+  font-size: 18px;
+  font-family: 'icomoon';
   margin-top: 10px;
+}
+.player .volume-bar .jp-volume-bar {
+  position: relative;
+  left: 18px;
+  top: -12.5px;
+  width: 80px;
+  height: 5px;
+  border: inset 1px #eeeeee;
+  background-color: #ffffff;
+}
+.player .volume-bar .jp-volume-bar-value {
+  height: 5px;
+  background-color: #4d4d4d;
+}
+.player .btn {
+  display: inline-block;
   height: 30px;
   line-height: 30px;
   font-size: 30px;
   color: rgba(102, 102, 102, 0.8);
   font-family: 'icomoon';
+  margin-top: 10px;
 }
 .player .btn li {
   display: inline-block;
@@ -79,25 +101,21 @@
 .player .btn li:hover {
   color: #4d4d4d;
 }
-.player .btn .jp-volume-bar {
-  width: 80px;
-  height: 5px;
-  border: inset 1px #eeeeee;
-  margin: -17px 0 0 30px;
-  background-color: #ffffff;
-}
-.player .btn .jp-volume-bar .jp-volume-bar-value {
-  height: 5px;
-  background-color: #5252ff;
-}
 .player .btn .jp-pause {
   display: none;
+}
+.jp-play,
+.jp-pause {
+  font-size: 30px;
+  line-height: 60px;
+  color: rgba(102, 102, 102, 0.8);
+  font-family: 'icomoon';
 }
 .cd {
   width: 240px;
   height: 240px;
   background: #999999 url("http://somgle-cover.qiniudn.com/Shayne_Ward-Breathless.jpg");
-  box-shadow: 0 0 10px 6px rgba(51, 51, 51, 0.6);
+  box-shadow: 0 0 8px 5px rgba(51, 51, 51, 0.6);
   margin: 15px;
   -webkit-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -168,4 +186,35 @@
 .lyric ul li.now {
   color: #ff1314;
   font-size: 18px;
+}
+.display {
+  clear: both;
+  width: 300px;
+  color: #333333;
+}
+.display .inline {
+  display: inline-block;
+  height: 60px;
+}
+.display .inline:hover {
+  background-color: #cccccc;
+}
+.display .cur {
+  position: relative;
+}
+.display .cur .btn {
+  left: 35px;
+  display: none;
+}
+.display .cur:hover .btn {
+  display: block;
+}
+.display .pre,
+.display .next,
+.display .jp-play,
+.display .jp-pause {
+  font-size: 30px;
+  line-height: 60px;
+  color: rgba(102, 102, 102, 0.8);
+  font-family: 'icomoon';
 }

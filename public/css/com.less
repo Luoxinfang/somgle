@@ -50,3 +50,22 @@ footer{
 .img-circle {
   .border-radius(50%);
 }
+.upload-file {
+  width: 120px;
+  height: 120px;
+  border: dashed 3px @deep-gray;
+  .border-radius(20px);
+  display: inline-block;
+  text-align: center;
+  &:after{
+    width: 120px;
+    height: 120px;
+    font-size: 35px;
+    line-height: 120px;
+    color: @deep-gray;
+    content: '\e6df';
+  }
+  input{
+    display: none;
+  }
+}

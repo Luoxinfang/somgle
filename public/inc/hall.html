@@ -9,23 +9,28 @@
         <div class="jp-current-time"></div>
         <div class="jp-duration"></div>
       </div>
-      <ul class="btn jp-controls">
-        <li class="icon-volume-medium"><div class="jp-volume-bar">
-            <div class="jp-volume-bar-value"></div>
-          </div>
-        </li>
-        <li class="pre icon-previous"></li>
-        <li class="jp-play icon-play"></li>
-        <li class="jp-pause icon-pause"></li>
-        <li class="next icon-next"></li>
-      </ul>
+      <div class="volume-bar">
+        <div class="icon-volume-medium"></div>
+        <div class="jp-volume-bar">
+          <div class="jp-volume-bar-value"></div>
+        </div>
+      </div>
     </div>
-
-
+    <div id="display" class="display">
+      <div class="pre inline icon-previous"></div>
+      <div class="cur inline jp-progress">
+        <p>歌名： <span>Util you</span> </p>
+        <p>专辑： <span>Breathless</span> </p>
+        <p>歌名： <span>Shayne ward</span> </p>
+        <div class="btn jp-play icon-play"></div>
+        <div class="btn jp-pause icon-pause"></div>
+      </div>
+      <div class="next inline icon-next"></div>
+    </div>
   </div>
   <div id="lyric" class="lyric ts1">
-
     <ul></ul>
     <div id="tip" class="tip">正在加载歌词...</div>
   </div>
+
 </div>

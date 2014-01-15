@@ -58,7 +58,7 @@ h6 {
 body {
   color: #ffffff;
   font-size: 12px;
-  font-family: 'arial', '宋体';
+  font-family: 'arial', 'Microsoft YaHei';
   background: #eeeeee;
   padding: 0 5%;
 }
@@ -138,4 +138,26 @@ footer {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
+}
+.upload-file {
+  width: 120px;
+  height: 120px;
+  border: dashed 3px #cccccc;
+  -webkit-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: center;
+}
+.upload-file:after {
+  width: 120px;
+  height: 120px;
+  font-size: 35px;
+  line-height: 120px;
+  color: #cccccc;
+  content: '\e6df';
+}
+.upload-file input {
+  display: none;
 }

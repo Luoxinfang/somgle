@@ -5,6 +5,12 @@
 define(function (require, exports, module) {
   var _ = require('underscore');
   var Player = require('../module/player');
+  var Page = require('../module/page');
+  var Class = require('class');
+
+  var page = new Page;
+  var NavBar = require('../module/navbar');
+
   var Menu = {
     rotateDeg: 45,
     activeIndex: 0,
@@ -35,33 +41,29 @@ define(function (require, exports, module) {
       switch (index) {
         case 1:
           require.async('../../inc/register.html', function (tpl) {
-            that.showPage('#register', tpl);
+            page.showPage(tpl, '#register');
 
           });
           break;
         case 2:
           require.async('../../inc/login.html', function (tpl) {
-            that.showPage('#login', tpl);
+            page.showPage(tpl, '#login');
 
           });
           break;
         case 3:
           require.async('../../inc/login.html', function (tpl) {
-            that.showPage('#settings', tpl);
+            page.showPage(tpl, '#settings');
 
           });
           break;
         default :
           require.async('../../inc/hall.html', function (tpl) {
-            that.showPage('#hall', tpl);
+            page.showPage(tpl, '#hall');
             new Player;
           });
       }
 
-    },
-    showPage: function (title, tpl) {
-      //title && history.pushState(title);
-      this.$main.html(_.template(tpl));
     },
     bindEvent: function () {
       this.$logo.on('click', this.show);
@@ -74,4 +76,9 @@ define(function (require, exports, module) {
     }
   };
   Menu.init();
+  new NavBar('#nav');
+  setTimeout(function () {
+    $('#nav').children().last().trigger('click');
+  },200)
+
 });

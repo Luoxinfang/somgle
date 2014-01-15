@@ -7,65 +7,81 @@
   overflow: hidden;
   width: @cd-player-width;
   height: @cd-player-height;
-  .jp-progress {
-    .jp-seek-bar {
-      color: @black;
-      overflow: hidden;
+  .jp-seek-bar {
+    color: @black;
+    overflow: hidden;
+    height: @jp-bar-height;
+    background-color: @white;
+    border: inset 1px @gray;
+    margin-top: @padding-base-2x;
+    .border-radius(@jp-bar-height/2+1);
+    //.box-shadow(0px, 0px, 20px, -5px, @black, inset);
+    .jp-play-bar {
       height: @jp-bar-height;
-      background-color: @white;
-      border: inset 1px @gray;
-      margin-top: @padding-base-2x;
-      .border-radius(@jp-bar-height/2+1);
-      //.box-shadow(0px, 0px, 20px, -5px, @black, inset);
-      .jp-play-bar {
-        height: @jp-bar-height;
-        background-color: @light-black;
-      }
-      .jp-current-time{
-        float: left;
-        margin: -@jp-bar-height 0 0 @padding-base;
-      }
-      .jp-duration{
-        float: right;
-        margin: -@jp-bar-height @padding-base 0 0;
-      }
+      background-color: @light-black;
+    }
+    .jp-current-time {
+      float: left;
+      margin: -@jp-bar-height 0 0 @padding-base;
+    }
+    .jp-duration {
+      float: right;
+      margin: -@jp-bar-height @padding-base 0 0;
     }
   }
-  .btn {
+  .volume-bar {
+    display: inline-block;
+    color: @menu-bg-color;
+    width: @jp-volume-bar-width + @font-size-h4;
+    font-size: @font-size-h4;
+    font-family: @font-family-glyphicon;
     margin-top: @padding-base-2x;
+    .jp-volume-bar {
+      position: relative;
+      left: @font-size-h4;
+      top: -(@font-size-h4 + @padding-base)/2 - 1;
+      width: @jp-volume-bar-width;
+      height: @padding-base;
+      border: inset 1px @gray;
+      background-color: @white;
+    }
+    .jp-volume-bar-value {
+      height: @padding-base;
+      background-color: @bg-color-hover;
+    }
+  }
+
+  .btn {
+    display: inline-block;
     height: @jp-btn-height;
     line-height: @jp-btn-height;
     font-size: @font-size-h2;
     color: @menu-bg-color;
     font-family: @font-family-glyphicon;
+    margin-top: @padding-base-2x;
     li {
       display: inline-block;
       &:hover {
         color: @bg-color-hover;
       }
     }
-    .jp-volume-bar {
-      width: @jp-volume-bar-width;
-      height: @padding-base;
-      border: inset 1px @gray;
-      margin: -@jp-btn-height/2-2 0 0 30px;
-      background-color: @white;
-      .jp-volume-bar-value {
-        height: @padding-base;
-        background-color: @blue;
-      }
-    }
     .jp-pause {
       display: none;
     }
   }
-}
 
+}
+.jp-play,.jp-pause{
+  font-size: @font-size-h2;
+  line-height: @display-height;
+  color: @menu-bg-color;
+  font-family: @font-family-glyphicon;
+}
 .cd {
   width: @cd-width;
   height: @cd-height;
   background: @bg-color url("http://somgle-cover.qiniudn.com/Shayne_Ward-Breathless.jpg");
-  box-shadow: 0 0 10px 6px fade(@black, 60);
+  box-shadow: 0 0 8px 5px fade(@black, 60);
   margin: @margin-base-3x;
   &:after {
     position: absolute;
@@ -97,7 +113,7 @@
 .pickup-arm {
   position: absolute;
   top: -@cd-player-arm-height/2 + @cd-player-arm-width;
-  left: @cd-width+@cd-player-arm-width+@padding-base-2x;
+  left: @cd-width+@cd-player-arm-width + @padding-base-2x;
   height: @cd-player-arm-height;
   width: @cd-player-arm-width;
   z-index: -1;
@@ -127,5 +143,37 @@
       color: @red;
       font-size: @font-size-h4;
     }
+  }
+}
+
+.display {
+  clear: both;
+  width: 300px;
+  color: @black;
+  .inline{
+    display: inline-block;
+    height: @display-height;
+    &:hover{
+      background-color: @deep-gray;
+    }
+  }
+  .cur{
+    position: relative;
+    .btn{
+      left: 35px;
+      display: none;
+    }
+    &:hover{
+      .btn{
+        display: block;
+      }
+    }
+
+  }
+  .pre, .next,.jp-play,.jp-pause {
+    font-size: @font-size-h2;
+    line-height: @display-height;
+    color: @menu-bg-color;
+    font-family: @font-family-glyphicon;
   }
 }

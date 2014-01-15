@@ -3,7 +3,7 @@
  * Created by luoxinfang on 14-1-3.
  */
 'use strict';
-define(function (require, exports, module) {
+define(function(require, exports, module) {
   require('jQuery');
   require('jPlayer');
   var _ = require('underscore');
