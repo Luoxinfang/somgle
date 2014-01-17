@@ -26,6 +26,7 @@ define(function (require, exports, module) {
         case 'my-space':
           var tpl = require('../../inc/my_space.html');
           page.showPage(tpl, 'my_space');
+          var bootstrap = require('bootstrap');
           break;
         default :
 

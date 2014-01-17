@@ -1,5 +1,5 @@
 define(function(require){
-  require('jquery');
+  require('jQuery');
   /**
    * bootstrap.js v3.0.0 by @fat and @mdo
    * Copyright 2013 Twitter Inc.

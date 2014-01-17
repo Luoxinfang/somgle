@@ -25,9 +25,14 @@ if ('development' == app.get('env')) {
 }
 
 var routes={
-  main:require('./routes')
+  main:require('./routes'),
+  admin:require('./routes/admin')
 };
 app.get('/',routes.main.index);
+
+app.get('/admin',routes.admin.index);
+
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

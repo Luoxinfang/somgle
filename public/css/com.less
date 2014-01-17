@@ -50,19 +50,20 @@ footer{
 .img-circle {
   .border-radius(50%);
 }
+//file
+//------------------------
 .upload-file {
-  width: 120px;
-  height: 120px;
+  width: @upload-file-height;
+  height: @upload-file-height;
+  padding: @padding-base-4x;
   border: dashed 3px @deep-gray;
   .border-radius(20px);
   display: inline-block;
   text-align: center;
   &:after{
-    width: 120px;
-    height: 120px;
-    font-size: 35px;
-    line-height: 120px;
     color: @deep-gray;
+    line-height: @upload-file-height;
+    font-size: 35px;
     content: '\e6df';
   }
   input{
