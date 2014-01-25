@@ -34,96 +34,27 @@
     transform: rotate(360deg);
   }
 }
+.stage,
 .player {
-  float: left;
-  position: relative;
-  overflow: hidden;
-  width: 300px;
-  height: 880px;
-}
-.player .jp-seek-bar {
-  color: #333333;
-  overflow: hidden;
-  height: 15px;
-  background-color: #ffffff;
-  border: inset 1px #eeeeee;
-  margin-top: 10px;
-  -webkit-border-radius: 8.5px;
-  -ms-border-radius: 8.5px;
-  -o-border-radius: 8.5px;
-  border-radius: 8.5px;
-}
-.player .jp-seek-bar .jp-play-bar {
-  height: 15px;
-  background-color: #999999;
-}
-.player .jp-seek-bar .jp-current-time {
-  float: left;
-  margin: -15px 0 0 5px;
-}
-.player .jp-seek-bar .jp-duration {
-  float: right;
-  margin: -15px 5px 0 0;
-}
-.player .volume-bar {
-  display: inline-block;
-  color: rgba(102, 102, 102, 0.8);
-  width: 98px;
-  font-size: 18px;
-  font-family: 'icomoon';
-  margin-top: 10px;
-}
-.player .volume-bar .jp-volume-bar {
-  position: relative;
-  left: 18px;
-  top: -12.5px;
-  width: 80px;
-  height: 5px;
-  border: inset 1px #eeeeee;
-  background-color: #ffffff;
-}
-.player .volume-bar .jp-volume-bar-value {
-  height: 5px;
-  background-color: #4d4d4d;
-}
-.player .btn {
-  display: inline-block;
-  height: 30px;
-  line-height: 30px;
-  font-size: 30px;
-  color: rgba(102, 102, 102, 0.8);
-  font-family: 'icomoon';
-  margin-top: 10px;
-}
-.player .btn li {
-  display: inline-block;
-}
-.player .btn li:hover {
-  color: #4d4d4d;
-}
-.player .btn .jp-pause {
-  display: none;
-}
-.jp-play,
-.jp-pause {
-  font-size: 30px;
-  line-height: 60px;
-  color: rgba(102, 102, 102, 0.8);
-  font-family: 'icomoon';
+  clear: left;
+  width: 780px;
+  margin: 0 auto;
 }
 .cd {
+  float: left;
   width: 240px;
   height: 240px;
   background: #999999 url("http://somgle-cover.qiniudn.com/Shayne_Ward-Breathless.jpg");
   box-shadow: 0 0 8px 5px rgba(51, 51, 51, 0.6);
-  margin: 15px;
+  margin-top: 30px;
+  vertical-align: middle;
   -webkit-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
 }
 .cd:after {
-  position: absolute;
+  position: relative;
   left: 86px;
   top: 86px;
   background: #eeeeee;
@@ -169,9 +100,9 @@
 }
 .lyric {
   float: left;
-  margin-left: 20px;
   width: 500px;
-  height: 300px;
+  height: 290px;
+  margin-left: 40px;
   color: #333333;
   overflow: hidden;
 }
@@ -187,34 +118,121 @@
   color: #ff1314;
   font-size: 18px;
 }
-.display {
-  clear: both;
-  width: 300px;
+.player {
+  overflow: hidden;
+  height: 90px;
+  margin-top: 10px;
+  border: solid 1px #999999;
+  -webkit-border-radius: 45px;
+  -ms-border-radius: 45px;
+  -o-border-radius: 45px;
+  border-radius: 45px;
+}
+.player .progress {
+  margin: 0 10px;
+}
+.player .jp-seek-bar {
   color: #333333;
+  overflow: hidden;
+  height: 15px;
+  background-color: #ffffff;
+  border-bottom: solid 1px #eeeeee;
 }
-.display .inline {
-  display: inline-block;
-  height: 60px;
+.player .jp-seek-bar .jp-play-bar {
+  height: 15px;
+  background-color: #999999;
 }
-.display .inline:hover {
-  background-color: #cccccc;
+.player .jp-seek-bar .jp-current-time {
+  float: left;
+  margin: -15px 0 0 20px;
 }
-.display .cur {
+.player .jp-seek-bar .jp-duration {
+  float: right;
+  margin: -15px 20px 0 0;
+}
+.player .display {
+  clear: left;
+  color: #333333;
+  height: 50px;
+  margin: 5px 0;
+}
+.player .display .pre {
+  margin-left: -10px;
+}
+.player .display .cur {
   position: relative;
+  width: 660px;
+  margin: 0 10px;
 }
-.display .cur .btn {
-  left: 35px;
+.player .display .cur .btn {
   display: none;
+  position: absolute;
+  top: -10px;
+  left: 290px;
 }
-.display .cur:hover .btn {
+.player .display .cur:hover .btn {
   display: block;
 }
-.display .pre,
-.display .next,
-.display .jp-play,
-.display .jp-pause {
+.player .display .next {
+  margin-right: -10px;
+}
+.player .display .pre,
+.player .display .next,
+.player .display .jp-play,
+.player .display .jp-pause {
+  color: rgba(102, 102, 102, 0.8);
+  font-size: 50px;
+  line-height: 50px;
+  font-family: 'icomoon';
+}
+.player .display .pre:hover,
+.player .display .next:hover,
+.player .display .jp-play:hover,
+.player .display .jp-pause:hover {
+  color: #4d4d4d;
+}
+.player .volume-bar {
+  color: #333333;
+  height: 15px;
+  background-color: #ffffff;
+  border-top: solid 1px #ffffff;
+  font-family: 'icomoon';
+}
+.player .volume-bar .icon-volume-medium {
+  text-align: right;
+  height: 15px;
+  width: 35px;
+  background-color: #999999;
+}
+.player .volume-bar .jp-volume-bar {
+  width: 720px;
+  height: 15px;
+}
+.player .volume-bar .jp-volume-bar-value {
+  height: 15px;
+  background-color: #999999;
+}
+.player .btn {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
   font-size: 30px;
-  line-height: 60px;
+  color: rgba(102, 102, 102, 0.8);
+  font-family: 'icomoon';
+  margin-top: 10px;
+}
+.player .btn li {
+  display: inline-block;
+}
+.player .btn li:hover {
+  color: #4d4d4d;
+}
+.player .btn .jp-pause {
+  display: none;
+}
+.jp-pause {
+  font-size: 30px;
+  line-height: 50px;
   color: rgba(102, 102, 102, 0.8);
   font-family: 'icomoon';
 }

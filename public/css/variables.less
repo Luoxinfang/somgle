@@ -54,68 +54,54 @@
 @padding-base-3x: @padding-base*3;
 @padding-base-4x: @padding-base*4;
 @padding-base-6x: @padding-base*6;
+@padding-base-7x: @padding-base*7;
 @padding-base-8x: @padding-base*8;
-@margin-base: 5px;
-@margin-base-2x: @margin-base*2;
-@margin-base-3x: @margin-base*3;
-@margin-base-4x: @margin-base*4;
-@margin-base-6x: @margin-base*6;
-@margin-base-8x: @margin-base*8;
+
 
 @height-header: 90px;
 @height-footer: 100px;
 
 //com
-//--------------------------
 @upload-file-height:100px;
 
 
 //main
-//--------------------------
 @main-height: 700px;
 
 // Iconography
-// -------------------------
-
 @icon-font-path: "../fonts/";
 @icon-font-name: "icomoon";
 
 //nav
-//--------------------------
 @nav-height:80px;
 
 
 //menu
-//--------------------------
 @menu-height: 80px;
 @menu-width: 80px;
 @menu-bg-color: fade(@black*2, 80%);
 @menu-bg-color-hover: fade(@black, 80%);
 
 //button
-//--------------------------
 @btn-height: 20px;
 @btn-width: 20px;
 
 //panel
-//--------------------------
 @panel-padding-vertical: 15px;
 @panel-padding-horizontal: 10px;
 @panel-bg-color: fade(@black*2, 85%);
 
 //player
-//---------------------------
+@player-height:90px;
 @jp-bar-width:260px;
 @jp-bar-height:15px;
 @jp-bar-bg-color:#FFFFFF;
 @jp-bar-border-color:@deep-gray;
-
 @jp-bar-filler-color:fade(@deep-gray,50%);
 @jp-bar-border: solid 1px @jp-bar-border-color;
 @jp-btn-height:@jp-bar-height*2;
 @jp-volume-bar-width :80px;
 //CD
-//---------------------------
 @cd-player-width: 300px;
 @cd-player-height: 880px;
 @cd-width: 240px;
@@ -126,6 +112,8 @@
 @cd-eye-border-color: fade(@white/4, 65%);
 @cd-player-arm-width: 25px;
 @cd-player-arm-height: @cd-height*1.5;
+//lyric
+@lyric-width: 500px;
+@lyric-height: 290px;
 //display
-//----------------------------
-@display-height: 60px;
+@display-height: @player-height - @jp-bar-height*2 - @padding-base-2x;

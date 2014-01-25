@@ -3,7 +3,7 @@
  * Created by luoxinfang on 14-1-3.
  */
 'use strict';
-define(function(require, exports, module) {
+define(function (require, exports, module) {
   require('jQuery');
   require('jPlayer');
   var _ = require('underscore');
@@ -11,9 +11,9 @@ define(function(require, exports, module) {
 
   var Player = Class.extend({
     init: function () {
+      this.$CD = $('#cd');
       this.$music = $('#music_player');
       this.$player = $('#jp_container');
-      this.$CD = $('#cd');
       this.$pickupArm = $('#pickup_arm');
       this.$playBtn = $('.jp-play');
       this.$pauseBtn = $('.jp-pause');
@@ -42,23 +42,21 @@ define(function(require, exports, module) {
         timeupdate: function (e) {
           var jPlayer = e.jPlayer,
             lyrics = that.lyrics,
-            currentTime = Math.floor(jPlayer.status.currentTime),
-            lineHeight = that.$lyric.children('li').height(),
-            lyricMiddle = that.$player.height() / 2 - lineHeight;
+            currentTime = Math.floor(jPlayer.status.currentTime);
           for (var i = 0, l = lyrics.length; i < l; i++) {
             var lineTime = lyrics[i][0].split(":"),
               startTime = Math.floor(lineTime[0]) * 60 + Math.floor(lineTime[1]);
             if (currentTime == startTime) {
-              if (lineHeight * i >= lyricMiddle && lineHeight * (l - i ) >= lyricMiddle) {
+              if (that.lineHeight * i >= that.lyricMiddle && that.lineHeight * (l - i ) >= that.lyricMiddle) {
                 that.$lyric.css({
-                  'top': -lineHeight * (i - Math.ceil(lyricMiddle / lineHeight)) + "px"
+                  'top': -that.lineHeight * (i - Math.ceil(that.lyricMiddle / that.lineHeight)) + "px"
                 });
               }
               that.$lyric.children('li').removeClass('now').eq(i).addClass('now');
             }
           }
         },
-        ended:function(){
+        ended: function () {
           that.rotateCD();
         },
         wmode: "window"
@@ -74,8 +72,7 @@ define(function(require, exports, module) {
       var that = this,
         lyricsArr = [];
       for (var i = 0, j = 0, l = lyrics.length; i < l; i++) {
-        var lyric = lyrics[i],
-          title, author, album;
+        var lyric = lyrics[i], title, author, album;
         if (lyric.split(']')[1]) {
           var lyricContent = lyric.substring(10);
           that.lyrics[j] = [];
@@ -85,24 +82,26 @@ define(function(require, exports, module) {
           j++;
         }
         /*else {
-          var t = lyric.replace(/\[|\]/g, '').split(':');
-          switch (t[0]) {
-            case 'ti':
-              title = t[1];
-              break;
-            case 'ar':
-              author = t[1];
-              break;
-            case 'al':
-              album = t[1];
-              break;
-          }
-        }*/
+         var t = lyric.replace(/\[|\]/g, '').split(':');
+         switch (t[0]) {
+         case 'ti':
+         title = t[1];
+         break;
+         case 'ar':
+         author = t[1];
+         break;
+         case 'al':
+         album = t[1];
+         break;
+         }
+         }*/
       }
-      if(lyricsArr.length == 0){
+      if (lyricsArr.length == 0) {
         this.$tip.html('歌词好像被我丢在路上了...');
-      }else{
+      } else {
         this.$lyric.html(lyricsArr.join(''));
+        this.lineHeight = that.$lyric.children('li').height();
+        this.lyricMiddle = that.$lyric.parent().height() / 2 - this.lineHeight * 2;
       }
     },
     bindEvent: function () {

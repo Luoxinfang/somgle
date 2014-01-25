@@ -101,17 +101,37 @@
   -o-border-radius: @num;
   border-radius: @num;
 }
+.border-radius-top(@num:5px) {
+  .border-radius-top-left(@num);
+  .border-radius-top-right(@num);
+}
+.border-radius-bottom(@num:5px) {
+  .border-radius-bottom-left(@num);
+  .border-radius-bottom-right(@num);
+}
 .border-radius-top-left(@num:5px) {
   -webkit-border-top-left-radius: @num;
   -ms-border-top-left-radius: @num;
   -o-border-top-left-radius: @num;
   border-top-left-radius: @num;
 }
+.border-radius-top-right(@num:5px) {
+  -webkit-border-top-right-radius: @num;
+  -ms-border-top-right-radius: @num;
+  -o-border-top-right-radius: @num;
+  border-top-right-radius: @num;
+}
 .border-radius-bottom-left(@num:5px) {
   -webkit-border-bottom-left-radius: @num;
   -ms-border-bottom-left-radius: @num;
   -o-border-bottom-left-radius: @num;
   border-bottom-left-radius: @num;
+}
+.border-radius-bottom-right(@num:5px) {
+  -webkit-border-bottom-right-radius: @num;
+  -ms-border-bottom-right-radius: @num;
+  -o-border-bottom-right-radius: @num;
+  border-bottom-right-radius: @num;
 }
 .box-shadow(@hor:0px,@ver:0px,@blur,@spread:0px,@color,@type:'') {
   box-shadow: @hor @ver @blur @spread @color @type;

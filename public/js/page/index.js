@@ -78,7 +78,7 @@ define(function (require, exports, module) {
   Menu.init();
   new NavBar('#nav');
   setTimeout(function () {
-    $('#nav').children().last().trigger('click');
+    //$('#nav').children().last().trigger('click');
   },200)
 
 });
