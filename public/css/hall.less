@@ -6,77 +6,83 @@
   width: @cd-width + @lyric-width + @padding-base-8x;
   margin: 0 auto;
 }
-.cd {
-  float: left;
-  width: @cd-width;
-  height: @cd-height;
-  background: @bg-color url("http://somgle-cover.qiniudn.com/Shayne_Ward-Breathless.jpg");
-  box-shadow: 0 0 8px 5px fade(@black, 60);
-  margin-top: @padding-base-6x;
-  vertical-align: middle;
-  .img-circle;
-  &:after {
-    position: relative;
-    left: (@cd-width - @cd-eye-width) /2 - @cd-eye-border-size;
-    top: (@cd-height - @cd-eye-height) /2 - @cd-eye-border-size;
-    background: @gray;
-    display: inline-block;
-    border: solid @cd-eye-border-size @cd-eye-border-color;
-    width: @cd-eye-width;
-    height: @cd-eye-height;
-    content: '';
-    opacity: 0.5;
-    .img-circle;
-  }
-}
-.rt {
-  .animation-rotate(20s);
-}
-.stop-rt {
-  -webkit-animation-play-state: paused;
-  -ms-animation-play-state: paused;
-  -o-animation-play-state: paused;
-  animation-play-state: paused;
-}
-.pickup-arm {
-  position: absolute;
-  top: -@cd-player-arm-height/2 + @cd-player-arm-width;
-  left: @cd-width+@cd-player-arm-width + @padding-base-2x;
-  height: @cd-player-arm-height;
-  width: @cd-player-arm-width;
-  z-index: -1;
-  background: url("../img/main/pickup-arm.png");
-  clip: rect(@cd-player-arm-height/2,@cd-player-arm-width,@cd-player-arm-height, 0px);
-}
-.pick {
-  .rotate(15deg);
-}
-.lyric {
-  float: left;
-  width: @lyric-width;
+.stage{
   height: @lyric-height;
-  margin-left: @padding-base-8x;
-  color: @black;
-  overflow: hidden;
-  ul {
-    position: relative;
-    li {
-      font-size: @font-size-h5;
-      height: @font-size-h4;
-      line-height: @font-size-h4;
+  .cd {
+    float: left;
+    width: @cd-width;
+    height: @cd-height;
+    background: @bg-color url("http://somgle-cover.qiniudn.com/Shayne_Ward-Breathless.jpg");
+    box-shadow: 0 0 8px 5px fade(@black, 60);
+    margin-top: @padding-base-6x;
+    vertical-align: middle;
+    .img-circle;
+    &:after {
+      position: relative;
+      left: (@cd-width - @cd-eye-width) /2 - @cd-eye-border-size;
+      top: (@cd-height - @cd-eye-height) /2 - @cd-eye-border-size;
+      background: @gray;
+      display: inline-block;
+      border: solid @cd-eye-border-size @cd-eye-border-color;
+      width: @cd-eye-width;
+      height: @cd-eye-height;
+      content: '';
+      opacity: 0.5;
+      .img-circle;
     }
-    li.now {
-      color: @red;
-      font-size: @font-size-h4;
+  }
+  .rt {
+    .animation-rotate(20s);
+  }
+  .stop-rt {
+    -webkit-animation-play-state: paused;
+    -ms-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+  .pickup-arm {
+    position: absolute;
+    top: -@cd-player-arm-height/2 + @cd-player-arm-width;
+    left: @cd-width+@cd-player-arm-width + @padding-base-2x;
+    height: @cd-player-arm-height;
+    width: @cd-player-arm-width;
+    z-index: -1;
+    background: url("../img/main/pickup-arm.png");
+    clip: rect(@cd-player-arm-height/2,@cd-player-arm-width,@cd-player-arm-height, 0px);
+  }
+  .pick {
+    .rotate(15deg);
+  }
+  .lyric {
+    float: left;
+    width: @lyric-width;
+    height: @lyric-height;
+    margin-left: @padding-base-8x;
+    color: @black;
+    overflow: hidden;
+    ul {
+      position: relative;
+      li {
+        font-size: @font-size-h5;
+        height: @font-size-h4;
+        line-height: @font-size-h4;
+      }
+      li.now {
+        color: @red;
+        font-size: @font-size-h4;
+      }
     }
   }
 }
+
 .player {
   overflow: hidden;
+  position: fixed;
+  left: 50%;
+  bottom: 100px;
+  margin-left: -(@cd-width + @lyric-width + @padding-base-8x)/2;
   height: @player-height;
-  margin-top: @padding-base-2x;
   border: solid 1px @light-black;
-
   .border-radius(@player-height/2);
   .progress{
     margin: 0 @player-height/9;

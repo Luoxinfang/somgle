@@ -1045,7 +1045,10 @@ button:hover {
   width: 780px;
   margin: 0 auto;
 }
-.cd {
+.stage {
+  height: 290px;
+}
+.stage .cd {
   float: left;
   width: 240px;
   height: 240px;
@@ -1058,7 +1061,7 @@ button:hover {
   -o-border-radius: 50%;
   border-radius: 50%;
 }
-.cd:after {
+.stage .cd:after {
   position: relative;
   left: 86px;
   top: 86px;
@@ -1074,19 +1077,19 @@ button:hover {
   -o-border-radius: 50%;
   border-radius: 50%;
 }
-.rt {
+.stage .rt {
   -webkit-animation: rotate-frames 20s infinite linear;
   -ms-animation: rotate-frames 20s infinite linear;
   -o-animation: rotate-frames 20s infinite linear;
   animation: rotate-frames 20s infinite linear;
 }
-.stop-rt {
+.stage .stop-rt {
   -webkit-animation-play-state: paused;
   -ms-animation-play-state: paused;
   -o-animation-play-state: paused;
   animation-play-state: paused;
 }
-.pickup-arm {
+.stage .pickup-arm {
   position: absolute;
   top: -155px;
   left: 275px;
@@ -1096,14 +1099,14 @@ button:hover {
   background: url("../img/main/pickup-arm.png");
   clip: rect(180px, 25px, 360px, 0px);
 }
-.pick {
+.stage .pick {
   -webkit-transform: rotate(15deg);
   -moz-transform: rotate(15deg);
   -ms-transform: rotate(15deg);
   -o-transform: rotate(15deg);
   transform: rotate(15deg);
 }
-.lyric {
+.stage .lyric {
   float: left;
   width: 500px;
   height: 290px;
@@ -1111,22 +1114,25 @@ button:hover {
   color: #333333;
   overflow: hidden;
 }
-.lyric ul {
+.stage .lyric ul {
   position: relative;
 }
-.lyric ul li {
+.stage .lyric ul li {
   font-size: 14px;
   height: 18px;
   line-height: 18px;
 }
-.lyric ul li.now {
+.stage .lyric ul li.now {
   color: #ff1314;
   font-size: 18px;
 }
 .player {
   overflow: hidden;
+  position: fixed;
+  left: 50%;
+  bottom: 100px;
+  margin-left: -390px;
   height: 90px;
-  margin-top: 10px;
   border: solid 1px #999999;
   -webkit-border-radius: 45px;
   -ms-border-radius: 45px;
