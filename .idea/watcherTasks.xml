@@ -3,7 +3,7 @@
   <component name="ProjectTasksOptions">
     <TaskOptions isEnabled="true">
       <option name="arguments" value="--no-color $FileName$" />
-      <option name="checkSyntaxErrors" value="false" />
+      <option name="checkSyntaxErrors" value="true" />
       <option name="description" value="Compiles .less files into .css files" />
       <option name="exitCodeBehavior" value="ERROR" />
       <option name="fileExtension" value="less" />
@@ -21,8 +21,8 @@
       </option>
       <option name="outputFromStdout" value="true" />
       <option name="passParentEnvs" value="true" />
-      <option name="program" value="$USER_HOME$/AppData/Roaming/npm/lessc.cmd" />
-      <option name="scopeName" value="Project Files" />
+      <option name="program" value="D:/nodejs/lessc.cmd" />
+      <option name="scopeName" value="mian" />
       <option name="trackOnlyRoot" value="false" />
       <option name="workingDir" value="$FileDir$" />
       <envs />
