@@ -10,8 +10,6 @@ define(function (require, exports, module) {
   var Navbar = Class.extend({
     init: function (el) {
       this.$el = $(el);
-
-
       this.bindEvent();
     },
     render: function ($el) {

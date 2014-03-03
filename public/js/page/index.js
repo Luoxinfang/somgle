@@ -2,15 +2,13 @@
  * Created by luoxinfang on 13-12-6.
  */
 'use strict';
-define(function (require, exports, module) {
+define(function (require) {
   var _ = require('underscore');
   var Player = require('../module/player');
   var Page = require('../module/page');
   var Class = require('class');
-
   var page = new Page;
   var NavBar = require('../module/navbar');
-  alert(1);
   var Menu = {
     rotateDeg: 45,
     activeIndex: 0,

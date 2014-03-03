@@ -1,10 +1,12 @@
 module.exports = function (grunt) {
   'use strict'
-  var sourceUrl = '/public', productUrl = '/dist';
+  var sourceUrl = 'public', productUrl = 'dist';
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     clean: {
-      clean: [productUrl]
+      build: {
+        src: [productUrl]
+      }
     },
     htmlmin: {
       dist: {
@@ -15,9 +17,9 @@ module.exports = function (grunt) {
         files: [
           {
             expand: true,
-            cwd: sourceUrl,
+            cwd: sourceUrl + '/inc',
             src: ['*.html'],
-            dest: productUrl
+            dest: productUrl + '/inc'
           }
         ]
       }
@@ -34,24 +36,22 @@ module.exports = function (grunt) {
       }
     },
     img: {
-      task1: {
-        src: sourceUrl + '/images/*.{png,jpg}',
-        dest: productUrl + '/images/'
-      },
-      task2: {
-        src: sourceUrl + '/images/betslip/*.{png,jpg}',
-        dest: productUrl + '/images/betslip'
-      },
       task3: {
-        src: sourceUrl + '/images/datetimepicker/*.{png,jpg}',
-        dest: productUrl + '/images/datetimepicker'
+        src: sourceUrl + '/img/**/*.{png,jpg}',
+        dest: productUrl + '/img'
+      }
+    },
+    smushit: {
+      group: {
+        src: sourceUrl + '/img/**/*.{png,jpg,ico}',
+        dest: productUrl + '/img'
       }
     },
     uglify: {
       options: {
         report: 'gzip',
         mangle: {
-          except: ['require']//seajs module must use this keyword
+          except: ['require']//seajs
         }
       },
       dist: {
@@ -70,9 +70,9 @@ module.exports = function (grunt) {
         files: [
           {
             expand: true,
-            cwd: sourceUrl + '/templates',
-            src: ['**/*.tpl'],
-            dest: productUrl + '/templates',
+            cwd: sourceUrl + '/tpl',
+            src: ['**/*.{tpl,html}'],
+            dest: productUrl + '/tpl',
             ext: '.js'
           }
         ]
@@ -94,26 +94,14 @@ module.exports = function (grunt) {
       }
     }
   });
-  //HTML
-  grunt.loadNpmTasks('grunt-contrib-htmlmin')
-  //CSS
-  grunt.loadNpmTasks('grunt-contrib-csslint')
-  grunt.loadNpmTasks('grunt-contrib-cssmin')
-  //JAVASCRIPT
-  grunt.loadNpmTasks('grunt-contrib-jshint')
-  grunt.loadNpmTasks('grunt-contrib-uglify')
-  /**
-   * https://github.com/heldr/grunt-img
-   * image compress
-   */
   grunt.loadNpmTasks('grunt-img')
-  //TEMPLATE
-  grunt.loadNpmTasks('grunt-contrib-jst');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  //CONTRIB
+  grunt.loadNpmTasks('grunt-smushit')
+  grunt.loadNpmTasks('grunt-contrib-jst')
   grunt.loadNpmTasks('grunt-contrib-clean')
-  grunt.loadNpmTasks('grunt-contrib-concat')
-  grunt.loadNpmTasks('grunt-contrib-watch')
+  grunt.loadNpmTasks('grunt-contrib-copy')
+  grunt.loadNpmTasks('grunt-contrib-htmlmin')
+  grunt.loadNpmTasks('grunt-contrib-cssmin')
+  grunt.loadNpmTasks('grunt-contrib-uglify')
 
-  grunt.registerTask('build', ['uglify', 'cssmin' , 'htmlmin', 'jst', 'copy', 'img']);
+  grunt.registerTask('build', ['clean', 'uglify', 'cssmin' , 'htmlmin','jst', 'copy', 'smushit']);
 };

@@ -19,6 +19,7 @@
     "grunt-contrib-cssmin": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-jst": "*",
+    "grunt-smushit":"*",
     "grunt-img": "*"
   }
 }
