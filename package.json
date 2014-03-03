@@ -1,5 +1,5 @@
 {
-  "name": "application-name",
+  "name": "somgle",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -8,6 +8,17 @@
   "dependencies": {
     "express": "3.4.6",
     "ejs": "*",
+    "colors": "*",
     "less-middleware": "*"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-htmlmin": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-jst": "*",
+    "grunt-img": "*"
   }
 }

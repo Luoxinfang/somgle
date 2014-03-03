@@ -1,0 +1,171 @@
+@import "variables";
+
+.resetStyle() {
+  body, h1, h2, h3, h4, h5, h6, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    padding: @padding-base 0px;
+  }
+  body {
+    color: @color-text;
+    font-size: @font-size-min;
+    font-family: @font-family;
+    background: @bg-body;
+    padding: 0 5%;
+  }
+  li {
+    list-style: none;
+  }
+}
+
+.transition(@sec:0.1s,@timing:ease) {
+  -webkit-transition: all @sec @timing;
+  -moz-transition: all @sec @timing;
+  -ms-transition: all @sec @timing;
+  -o-transition: all @sec @timing;
+  transition: all @sec @timing;
+}
+
+.transition-delay(@sec:0.1s,@timing:ease) {
+  -webkit-transition: all @sec @timing, all @sec @timing;
+  -moz-transition: all @sec @timing, all @sec @timing;
+  -ms-transition: all @sec @timing, all @sec @timing;
+  -o-transition: all @sec @timing, all @sec @timing;
+  transition: all @sec @timing, all @sec @timing;
+}
+
+.rotate(@deg:45deg) {
+  -webkit-transform: rotate(@deg);
+  -moz-transform: rotate(@deg);
+  -ms-transform: rotate(@deg);
+  -o-transform: rotate(@deg);
+  transform: rotate(@deg);
+}
+
+.scale(@mul:0.55) {
+  -webkit-transform: scale(@mul);
+  -moz-transform: scale(@mul);
+  -ms-transform: scale(@mul);
+  -o-transform: scale(@mul);
+  transform: scale(@mul);
+}
+
+//
+.animation-rotate(@time:30s) {
+  -webkit-animation: rotate-frames @time infinite linear;
+  -ms-animation: rotate-frames @time infinite linear;
+  -o-animation: rotate-frames @time infinite linear;
+  animation: rotate-frames @time infinite linear;
+}
+
+@-webkit-keyframes rotate-frames {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-ms-keyframes rotate-frames {
+  from {
+    -ms-transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes rotate-frames {
+  from {
+    -o-transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-frames {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.border-radius(@num:5px) {
+  -webkit-border-radius: @num;
+  -ms-border-radius: @num;
+  -o-border-radius: @num;
+  border-radius: @num;
+}
+.border-radius-top(@num:5px) {
+  .border-radius-top-left(@num);
+  .border-radius-top-right(@num);
+}
+.border-radius-bottom(@num:5px) {
+  .border-radius-bottom-left(@num);
+  .border-radius-bottom-right(@num);
+}
+.border-radius-top-left(@num:5px) {
+  -webkit-border-top-left-radius: @num;
+  -ms-border-top-left-radius: @num;
+  -o-border-top-left-radius: @num;
+  border-top-left-radius: @num;
+}
+.border-radius-top-right(@num:5px) {
+  -webkit-border-top-right-radius: @num;
+  -ms-border-top-right-radius: @num;
+  -o-border-top-right-radius: @num;
+  border-top-right-radius: @num;
+}
+.border-radius-bottom-left(@num:5px) {
+  -webkit-border-bottom-left-radius: @num;
+  -ms-border-bottom-left-radius: @num;
+  -o-border-bottom-left-radius: @num;
+  border-bottom-left-radius: @num;
+}
+.border-radius-bottom-right(@num:5px) {
+  -webkit-border-bottom-right-radius: @num;
+  -ms-border-bottom-right-radius: @num;
+  -o-border-bottom-right-radius: @num;
+  border-bottom-right-radius: @num;
+}
+.box-shadow(@hor:0px,@ver:0px,@blur,@spread:0px,@color,@type:'') {
+  box-shadow: @hor @ver @blur @spread @color @type;
+  -webkit-box-shadow: @hor @ver @blur @spread @color @type;
+}
+
+//form--------------------
+.form-init() {
+  input, button {
+    margin: 0;
+    padding: 0;
+    border: @border-base;
+    background-color: fade(@black, 25%);
+    outline: none;
+  }
+  input:invalid {
+    box-shadow: 0 1px 1px fade(@red, 9.5%) inset, 0 0 8px fade(@red, 60%);
+  }
+  input:focus {
+    box-shadow: 0 1px 1px fade(@black, 9.5%) inset, 0 0 8px fade(@blue, 60%);
+  }
+  button {
+    color: @black;
+    padding: @padding-base @padding-base-4x;
+    cursor: pointer;
+    .border-radius(4px);
+  }
+  button:hover {
+    background-color: @bg-color-hover;
+  }
+}
+
+//img
+//------------------------
+.img-circle() {
+  .border-radius(50%);
+}

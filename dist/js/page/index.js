@@ -10,7 +10,7 @@ define(function (require, exports, module) {
 
   var page = new Page;
   var NavBar = require('../module/navbar');
-  alert(1);
+  alert(2);
   var Menu = {
     rotateDeg: 45,
     activeIndex: 0,

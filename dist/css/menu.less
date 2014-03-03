@@ -1,0 +1,69 @@
+@import "variables";
+@import "mixins";
+
+#menu {
+  display: inline-block;
+  float: right;
+  cursor: pointer;
+  width: @menu-width;
+  height: @menu-height;
+  margin-top: (@height-header - @menu-height)/ 2;
+  .list {
+    overflow: hidden;
+    width: @menu-width;
+    height: @menu-height;
+    border-radius: @menu-width/2;
+    .rotate(45deg);
+    .item {
+      float: left;
+      text-align: center;
+      background-color: @menu-bg-color;
+      width: @menu-width/2;
+      height: @menu-height/2;
+      span {
+        display: block;
+        line-height: @menu-height/2;
+      }
+      &:hover {
+        background-color: @menu-bg-color-hover;
+      }
+      &.active {
+        color: @white;
+        background-color: @black !important;
+      }
+      &:nth-child(3) {
+        float: right;
+      }
+      &:nth-child(1) span {
+        .rotate(-45deg);
+      }
+      &:nth-child(2) span {
+        .rotate(45deg);
+      }
+      &:nth-child(3) span {
+        .rotate(135deg);
+      }
+      &:nth-child(4) span {
+        .rotate(225deg);
+      }
+    }
+  }
+  .show {
+    .scale(0.5) !important;
+  }
+  .logo {
+    position: relative;
+    top: -@menu-height/4*3;
+    left: @menu-width/4;
+    width: (@menu-width/2)-2;
+    height: (@menu-height/2)-2;
+    line-height: (@menu-height/2)-2;
+    border-radius: @menu-height/4;
+    text-align: center;
+    background: @black*6 @img-logo-34;
+    border: solid 1px @black*2;
+    &:hover {
+      background: @black*2 @img-logo-34;
+    }
+  }
+}
