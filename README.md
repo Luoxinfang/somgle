@@ -28,6 +28,7 @@ Uglify
     program: D:\nodejs\uglifyjs.cmd
 		arguments:
 		--reserved-names 'require' --output $ProjectFileDir$/dist/$FileDirPathFromParent(public)$$FileName$ $FileName$
+		output path to refresh:$ProjectFileDir$/dist/$FileDirPathFromParent(public)$$FileName$
 
 
 GRUNT
@@ -49,3 +50,4 @@ GRUNT
 		install
 			npm install -g grunt
 		settings
+
