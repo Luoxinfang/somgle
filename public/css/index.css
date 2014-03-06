@@ -1,3 +1,39 @@
+/**
+ * by radish on 2013/12/29
+ * variables
+ */
+@-webkit-keyframes rotate-frames {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-ms-keyframes rotate-frames {
+  from {
+    -ms-transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotate-frames {
+  from {
+    -o-transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(360deg);
+  }
+}
+@keyframes rotate-frames {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 @font-face {
   font-family: 'icomoon';
   src: url('../fonts/icomoon.eot');
@@ -686,6 +722,8 @@ h6 {
   padding: 5px 0px;
 }
 body {
+  min-width: 320px;
+  -webkit-texe-size-adjust: none;
   color: #ffffff;
   font-size: 12px;
   font-family: 'arial', 'Microsoft YaHei';
@@ -792,42 +830,6 @@ footer {
 }
 .upload-file input {
   display: none;
-}
-/**
- * by radish on 2013/12/29
- * variables
- */
-@-webkit-keyframes rotate-frames {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@-ms-keyframes rotate-frames {
-  from {
-    -ms-transform: rotate(0deg);
-  }
-  to {
-    -ms-transform: rotate(360deg);
-  }
-}
-@-o-keyframes rotate-frames {
-  from {
-    -o-transform: rotate(0deg);
-  }
-  to {
-    -o-transform: rotate(360deg);
-  }
-}
-@keyframes rotate-frames {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 input,
 button {
@@ -1128,7 +1130,6 @@ button:hover {
   margin-left: -390px;
   width: 780px;
   height: 90px;
-  margin: 0 auto;
   border: solid 1px #999999;
   -webkit-border-radius: 45px;
   -ms-border-radius: 45px;

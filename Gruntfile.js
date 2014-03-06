@@ -85,15 +85,13 @@ module.exports = function (grunt) {
     },
     copy: {
       main: {
-        expand: true,
-        cwd: sourceUrl + '/dist/templates',
-        src: '**',
-        dest: productUrl + '/templates',
-        flatten: true,
-        filter: 'isFile'
+        files: [
+          {expand: true, src: sourceUrl + '/fonts/**', dest: productUrl + '/fonts/' }
+        ]
       }
     }
-  });
+  })
+  ;
   grunt.loadNpmTasks('grunt-img')
   grunt.loadNpmTasks('grunt-smushit')
   grunt.loadNpmTasks('grunt-contrib-jst')
@@ -103,5 +101,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin')
   grunt.loadNpmTasks('grunt-contrib-uglify')
 
-  grunt.registerTask('build', ['clean', 'uglify', 'cssmin' , 'htmlmin','jst', 'copy', 'smushit']);
-};
+  grunt.registerTask('build', ['clean', 'uglify', 'cssmin' , 'htmlmin', 'jst', 'copy', 'smushit']);
+}
+;

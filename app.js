@@ -9,7 +9,7 @@ var settings = require('./settings');
 
 var app = express();
 // all environments
-app.set('env', 'production'); //production
+app.set('env', 'development'); //production
 app.set('port', process.env.PORT || 3000, null);
 app.set('views', path.join(__dirname, 'views'), null);
 app.set('view engine', 'ejs', null);
@@ -28,12 +28,10 @@ app.configure('development', function () {
   app.use(express.errorHandler());
 });
 app.use(express.logger('dev'));
-app.get('/', routes.index);
-
-
 
 http.createServer(app).listen(app.get('port'), function () {
   var info = 'Express server start in ' + app.get('env') +
     ' model & listening on port ' + app.get('port');
   console.log(info.info);
 });
+routes(app);
