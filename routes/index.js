@@ -1,14 +1,9 @@
 /*
  * GET home page.
  */
-
-
 module.exports = function(app){
-  var App = {
-    title: "Somgle",
-    version: "0.0.1"
-  };
+  var App = require('./appInfo');
   app.get('/', function (req, res) {
-    res.render('index', { title: 'Somgle' });
+    res.render('index', App);
   });
 };

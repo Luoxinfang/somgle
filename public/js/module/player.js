@@ -13,7 +13,6 @@ define(function (require, exports, module) {
     init: function () {
       this.$CD = $('#cd');
       this.$music = $('#music_player');
-      this.$player = $('#jp_container');
       this.$pickupArm = $('#pickup_arm');
       this.$playBtn = $('.jp-play');
       this.$pauseBtn = $('.jp-pause');

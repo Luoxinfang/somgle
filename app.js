@@ -27,7 +27,6 @@ app.configure('development', function () {
   app.use(express.static(path.join(__dirname, 'public')));
   app.use(express.errorHandler());
 });
-app.use(express.logger('dev'));
 
 http.createServer(app).listen(app.get('port'), function () {
   var info = 'Express server start in ' + app.get('env') +
@@ -35,3 +34,4 @@ http.createServer(app).listen(app.get('port'), function () {
   console.log(info.info);
 });
 routes(app);
+app.use(express.logger('dev'));

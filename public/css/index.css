@@ -1,39 +1,3 @@
-/**
- * by radish on 2013/12/29
- * variables
- */
-@-webkit-keyframes rotate-frames {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@-ms-keyframes rotate-frames {
-  from {
-    -ms-transform: rotate(0deg);
-  }
-  to {
-    -ms-transform: rotate(360deg);
-  }
-}
-@-o-keyframes rotate-frames {
-  from {
-    -o-transform: rotate(0deg);
-  }
-  to {
-    -o-transform: rotate(360deg);
-  }
-}
-@keyframes rotate-frames {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 @font-face {
   font-family: 'icomoon';
   src: url('../fonts/icomoon.eot');
@@ -700,6 +664,42 @@
 .icon-apple:after {
   content: "\e737";
 }
+/**
+ * by radish on 2013/12/29
+ * variables
+ */
+@-webkit-keyframes rotate-frames {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-ms-keyframes rotate-frames {
+  from {
+    -ms-transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotate-frames {
+  from {
+    -o-transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(360deg);
+  }
+}
+@keyframes rotate-frames {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 body,
 h1,
 h2,
@@ -729,6 +729,7 @@ body {
   font-family: 'arial', 'Microsoft YaHei';
   background: #eeeeee;
   padding: 0 5%;
+  overflow: hidden;
 }
 li {
   list-style: none;
@@ -1050,7 +1051,6 @@ button:hover {
   height: 240px;
   background: #999999 url("http://somgle-cover.qiniudn.com/Shayne_Ward-Breathless.jpg");
   box-shadow: 0 0 8px 5px rgba(51, 51, 51, 0.6);
-  margin-top: 30px;
   vertical-align: middle;
   -webkit-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -1080,7 +1080,7 @@ button:hover {
   animation: rotate-frames 20s infinite linear;
 }
 .stage .stop-rt {
-  -webkit-animation-play-state: paused;
+  -webkit-animation-play-state: paused!important;
   -ms-animation-play-state: paused;
   -o-animation-play-state: paused;
   animation-play-state: paused;

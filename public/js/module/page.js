@@ -2,6 +2,7 @@
  * Created by luoxinfang on 14-1-14.
  * Page Class
  */
+'use strict';
 define(function (require, exports, module) {
   var Class = require('class');
   var Page = Class.extend({
@@ -9,9 +10,9 @@ define(function (require, exports, module) {
       this.$el = $(el);
       this.$main = $('#main') || $('.main');
     },
-    showPage: function (tpl,title) {
+    showPage: function (tpl, title) {
       this.$main.html(tpl);
-      title && history.pushState(title);
+      //title && history.pushState(title);
     }
   });
   module.exports = Page;

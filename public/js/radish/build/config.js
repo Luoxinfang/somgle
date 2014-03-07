@@ -18,7 +18,7 @@ seajs.config({
     'Key':'radish/core/key'
   },
   map: [
-    [/^(.*\.(?:css|js|tpl))(.*)$/i, '$1?' + app.version]
+    [/^(.*\.(?:css|js|tpl))(.*)$/i, '$1?v=' + App.version]
   ],
   preload:['jQuery','text']
 });

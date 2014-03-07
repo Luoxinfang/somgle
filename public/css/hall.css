@@ -43,7 +43,6 @@
   height: 240px;
   background: #999999 url("http://somgle-cover.qiniudn.com/Shayne_Ward-Breathless.jpg");
   box-shadow: 0 0 8px 5px rgba(51, 51, 51, 0.6);
-  margin-top: 30px;
   vertical-align: middle;
   -webkit-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -73,7 +72,7 @@
   animation: rotate-frames 20s infinite linear;
 }
 .stage .stop-rt {
-  -webkit-animation-play-state: paused;
+  -webkit-animation-play-state: paused!important;
   -ms-animation-play-state: paused;
   -o-animation-play-state: paused;
   animation-play-state: paused;

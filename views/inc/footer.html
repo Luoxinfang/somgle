@@ -1,5 +1,10 @@
 <footer>
 
 </footer>
-<script type="text/javascript" src="js/radish/build/sea.js"></script>
-<script type="text/javascript" src="js/radish/build/config.js"></script>
+<script type="text/javascript">
+  var App={
+    version:'<%= version %>'
+  };
+</script>
+<script type="text/javascript" src="js/radish/build/sea.js?v=<%= version %>"></script>
+<script type="text/javascript" src="js/radish/build/config.js?v=<%= version %>"></script>

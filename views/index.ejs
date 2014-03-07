@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>somgle</title>
+  <title><%=title%></title>
   <meta name="keyword" content="音乐">
   <meta name="description" content="音乐让心灵不再孤独">
 	<meta name="viewport" content="width=device-width; initial-scale=1; user-scalable=no;">
@@ -12,9 +12,6 @@
 <div id="main" class="main"></div>
 <%= include inc/footer.html %>
 <script type="text/javascript">
-	var App={
-		version:'<%=version%>'
-	};
   seajs.use('page/index');
 </script>
 </body>

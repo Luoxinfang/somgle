@@ -63,6 +63,7 @@ body {
   font-family: 'arial', 'Microsoft YaHei';
   background: #eeeeee;
   padding: 0 5%;
+  overflow: hidden;
 }
 li {
   list-style: none;

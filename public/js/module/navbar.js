@@ -2,7 +2,7 @@
  * Created by luoxinfang on 14-1-14.
  * Navbar Class
  */
-
+'use strict';
 define(function (require, exports, module) {
   var Class = require('class');
   var Page = require('./page');
