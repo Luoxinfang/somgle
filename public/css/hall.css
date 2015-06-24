@@ -38,7 +38,7 @@
   height: 290px;
 }
 .stage .cd {
-  float: left;
+  margin: 0 auto;
   width: 240px;
   height: 240px;
   background: #999999 url("http://somgle-cover.qiniudn.com/Shayne_Ward-Breathless.jpg");
@@ -72,7 +72,7 @@
   animation: rotate-frames 20s infinite linear;
 }
 .stage .stop-rt {
-  -webkit-animation-play-state: paused!important;
+  -webkit-animation-play-state: paused !important;
   -ms-animation-play-state: paused;
   -o-animation-play-state: paused;
   animation-play-state: paused;
@@ -95,15 +95,15 @@
   transform: rotate(15deg);
 }
 .stage .lyric {
-  float: left;
-  width: 500px;
+  width: 360px;
+  margin: 10px auto;
   height: 290px;
-  margin-left: 40px;
   color: #333333;
   overflow: hidden;
 }
 .stage .lyric ul {
   position: relative;
+  text-align: center;
 }
 .stage .lyric ul li {
   font-size: 14px;
@@ -117,10 +117,9 @@
 .player {
   overflow: hidden;
   position: fixed;
-  left: 50%;
-  bottom: 100px;
-  margin-left: -390px;
-  width: 780px;
+  left: 10%;
+  bottom: 30px;
+  width: 80%;
   height: 90px;
   border: solid 1px #999999;
   -webkit-border-radius: 45px;
@@ -151,6 +150,7 @@
   margin: -15px 20px 0 0;
 }
 .player .display {
+  position: relative;
   clear: left;
   color: #333333;
   height: 50px;
@@ -161,20 +161,21 @@
 }
 .player .display .cur {
   position: relative;
-  width: 660px;
+  width: 520px;
   margin: 0 10px;
 }
 .player .display .cur .btn {
   display: none;
-  position: absolute;
-  top: -10px;
-  left: 290px;
+  position: relative;
+  top: -110px;
+  left: 18%;
 }
 .player .display .cur:hover .btn {
   display: block;
 }
 .player .display .next {
-  margin-right: -10px;
+  position: relative;
+  float: right;
 }
 .player .display .pre,
 .player .display .next,
@@ -205,7 +206,7 @@
   background-color: #999999;
 }
 .player .volume-bar .jp-volume-bar {
-  width: 720px;
+  width: 580px;
   height: 15px;
 }
 .player .volume-bar .jp-volume-bar-value {

@@ -1,10 +1,10 @@
 @import "variables";
 @import "mixins";
 
-.stage{
+.stage {
   height: @lyric-height;
   .cd {
-    float: left;
+    margin: 0 auto;
     width: @cd-width;
     height: @cd-height;
     background: @bg-color url("http://somgle-cover.qiniudn.com/Shayne_Ward-Breathless.jpg");
@@ -29,7 +29,7 @@
     .animation-rotate(20s);
   }
   .stop-rt {
-    -webkit-animation-play-state: paused!important;
+    -webkit-animation-play-state: paused !important;
     -ms-animation-play-state: paused;
     -o-animation-play-state: paused;
     animation-play-state: paused;
@@ -48,14 +48,14 @@
     .rotate(15deg);
   }
   .lyric {
-    float: left;
     width: @lyric-width;
+    margin: @padding-base-2x auto;
     height: @lyric-height;
-    margin-left: @padding-base-8x;
     color: @black;
     overflow: hidden;
     ul {
       position: relative;
+      text-align: center;
       li {
         font-size: @font-size-h5;
         height: @font-size-h4;
@@ -68,20 +68,21 @@
     }
   }
 }
-.music-list{
+
+.music-list {
 
 }
+
 .player {
   overflow: hidden;
   position: fixed;
-  left: 50%;
-  bottom: 100px;
-  margin-left: -(@cd-width + @lyric-width + @padding-base-8x)/2;
-  width: @cd-width + @lyric-width + @padding-base-8x;
+  left: 10%;
+  bottom: 30px;
+  width: 80%;
   height: @player-height;
   border: solid 1px @light-black;
   .border-radius(@player-height/2);
-  .progress{
+  .progress {
     margin: 0 @player-height/9;
   }
   .jp-seek-bar {
@@ -104,38 +105,41 @@
     }
   }
   .display {
+    position: relative;
     clear: left;
     color: @black;
     height: @display-height;
     margin: @padding-base 0;
-    .pre{
+    .pre {
       margin-left: -@padding-base-2x;
     }
-    .cur{
+    .cur {
       position: relative;
       width: @cd-width + @lyric-width + @padding-base-8x - @display-height*2 - @padding-base-4x;
       margin: 0 @padding-base-2x;
-      .btn{
+      .btn {
         display: none;
-        position: absolute;
-        top: -@padding-base*2;
-        left: (@cd-width + @lyric-width + @padding-base-8x - @display-height*4)/2;
+        position: relative;
+        top: -110px;
+        left: 18%;
       }
-      &:hover{
-        .btn{
+      &:hover {
+        .btn {
           display: block;
         }
       }
     }
-    .next{
-      margin-right: -@padding-base-2x;
+    .next {
+      position: relative;
+
+      float: right;
     }
-    .pre, .next,.jp-play,.jp-pause {
+    .pre, .next, .jp-play, .jp-pause {
       color: @menu-bg-color;
       font-size: @display-height;
       line-height: @display-height;
       font-family: @font-family-glyphicon;
-      &:hover{
+      &:hover {
         color: @bg-color-hover;
       }
     }
@@ -146,7 +150,7 @@
     background-color: @white;
     border-top: solid 1px @white;
     font-family: @font-family-glyphicon;
-    .icon-volume-medium{
+    .icon-volume-medium {
       text-align: right;
       height: @jp-bar-height;
       width: @padding-base-7x;
@@ -180,7 +184,8 @@
     }
   }
 }
-.jp-pause{
+
+.jp-pause {
   font-size: @font-size-h2;
   line-height: @display-height;
   color: @menu-bg-color;
